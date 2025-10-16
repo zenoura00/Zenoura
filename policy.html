@@ -1,304 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenoura | Policy</title>
-  <meta name="description" content="Zenoura privacy policy, disclaimer, and affiliate disclosure in English, Arabic, and German.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy | Zenoura</title>
+
+  <!-- Google Auto Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
+
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #0b0010, #1a0120);
-      color: #fff;
-      scroll-behavior: smooth;
+    :root{
+      --bg-1:#0e0111;
+      --bg-2:#1b0420;
+      --accent:#b95cff;
+      --muted:#cfc7db;
     }
-
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(10, 0, 20, 0.85);
-      backdrop-filter: blur(6px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      border-bottom: 1px solid rgba(185, 92, 255, 0.3);
-      z-index: 999;
+    body{
+      margin:0;
+      font-family:"Poppins",sans-serif;
+      background:linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      color:#fff;
+      line-height:1.6;
     }
-
-    .logo {
-      font-size: 26px;
-      color: #b95cff;
-      font-weight: 700;
-      letter-spacing: 3px;
+    header{
+      position:fixed;top:0;left:0;right:0;height:70px;
+      background:rgba(10,2,12,0.8);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 20px;
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(185,92,255,0.1);
+      z-index:1000;
     }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    .brand{color:var(--accent);font-weight:800;letter-spacing:3px;}
+    .menu a{
+      margin-left:20px;text-decoration:none;color:#fff;font-weight:600;
+      transition:color .2s;
     }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+    .menu a:hover{color:var(--accent);}
+    .container{max-width:900px;margin:120px auto 60px;padding:0 20px;}
+    h1{color:var(--accent);margin-bottom:10px;}
+    h2{color:var(--accent);margin-top:20px;margin-bottom:8px;}
+    p{color:var(--muted);}
+    footer{text-align:center;color:#888;padding:30px 10px;border-top:1px solid rgba(185,92,255,0.1);}
+    .lang-switch{margin-top:20px;}
+    .lang-switch button{
+      margin:0 5px;
+      background:transparent;
+      border:1px solid rgba(185,92,255,0.3);
+      color:#fff;
+      border-radius:10px;
+      padding:6px 10px;
+      cursor:pointer;
+      font-weight:600;
     }
-
-    nav a:hover {
-      color: #b95cff;
-    }
-
-    .lang-menu {
-      position: relative;
-    }
-
-    .lang-select {
-      background: none;
-      border: 1px solid #b95cff;
-      color: #b95cff;
-      padding: 6px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-    }
-
-    .lang-options {
-      display: none;
-      position: absolute;
-      top: 38px;
-      right: 0;
-      background: #120016;
-      border: 1px solid #b95cff;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .lang-options button {
-      background: none;
-      border: none;
-      color: #fff;
-      padding: 8px 12px;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .lang-options button:hover {
-      background: rgba(185, 92, 255, 0.2);
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #b95cff;
-      border-radius: 2px;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: rgba(15, 0, 20, 0.9);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        border-left: 1px solid #b95cff;
-        padding: 15px;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    main {
-      padding-top: 90px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h1 {
-      font-size: 42px;
-      color: #b95cff;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-    }
-
-    .section {
-      background-color: rgba(255,255,255,0.03);
-      border: 1px solid rgba(185,92,255,0.2);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-      text-align: left;
-      box-shadow: 0 0 15px rgba(185, 92, 255, 0.15);
-    }
-
-    .section h2 {
-      color: #b95cff;
-      font-size: 22px;
-    }
-
-    .section p {
-      line-height: 1.6;
-      font-size: 16px;
-      color: #ddd;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      color: #999;
-      border-top: 1px solid rgba(185, 92, 255, 0.3);
-      margin-top: 50px;
-    }
-
-    .fade {
-      animation: fade 0.5s ease-in-out;
-    }
-
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .lang-switch button.active{
+      background:rgba(185,92,255,0.1);
+      color:var(--accent);
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">ZENOURA</div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-    <nav id="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="policy.html">Policy</a>
-      <a href="affiliate.html">Affiliate</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="lang-menu">
-      <button class="lang-select" onclick="toggleLangMenu()">🇬🇧 EN</button>
-      <div class="lang-options" id="langOptions">
-        <button onclick="setLang('en')">🇬🇧 EN</button>
-        <button onclick="setLang('ar')">🇸🇦 AR</button>
-        <button onclick="setLang('de')">🇩🇪 DE</button>
-      </div>
+    <div class="brand">ZENOURA</div>
+    <div class="menu">
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">💎 About</a>
+      <a href="affiliate.html">💼 Affiliate</a>
+      <a href="contact.html">✉️ Contact</a>
     </div>
   </header>
 
-  <!-- Google Ad Top -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
-  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-2696059232288635" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <main class="container" id="content">
+    <h1 id="title">Privacy Policy</h1>
 
-  <main id="content" class="fade">
-    <h1>Policies & Terms</h1>
-
-    <div class="section">
-      <h2>Privacy Policy</h2>
-      <p>We respect your privacy and collect only essential information, such as cookies, to enhance your browsing experience.</p>
+    <div id="text">
+      <p>At Zenoura, we respect your privacy and are committed to protecting your personal information. We only collect minimal data to improve user experience.</p>
+      <h2>Cookies</h2>
+      <p>We use cookies to analyze traffic and enhance website performance. You may disable cookies at any time in your browser settings.</p>
+      <h2>Affiliate Links</h2>
+      <p>Some links on our site may be affiliate links, meaning we may earn a small commission if you make a purchase through them — at no extra cost to you.</p>
+      <h2>Data Security</h2>
+      <p>We use secure hosting and encryption technologies to protect your information from unauthorized access.</p>
+      <h2>Contact</h2>
+      <p>If you have questions regarding our privacy practices, email us at <strong>support@zen-oura.com</strong>.</p>
     </div>
 
-    <div class="section">
-      <h2>Affiliate Disclosure</h2>
-      <p>Some links on this site are affiliate links. When you click and make a purchase, Zenoura may earn a small commission at no extra cost to you.</p>
-    </div>
-
-    <div class="section">
-      <h2>Disclaimer</h2>
-      <p>Zenoura is not the official owner of any promoted products. Always verify details from the official source before making any purchase.</p>
-    </div>
-
-    <div class="section">
-      <h2>Terms of Use</h2>
-      <p>By using our site, you agree to our terms and conditions. Information here is for educational and promotional purposes only.</p>
+    <div class="lang-switch">
+      <button data-lang="en" class="active">🇬🇧 EN</button>
+      <button data-lang="ar">🇸🇦 AR</button>
+      <button data-lang="de">🇩🇪 DE</button>
     </div>
   </main>
-
-  <!-- Google Ad Bottom -->
-  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-2696059232288635" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <footer>© 2025 Zenoura. All rights reserved.</footer>
 
   <script>
-    const navbar = document.getElementById("navbar");
-    const langOptions = document.getElementById("langOptions");
-    const content = document.getElementById("content");
-    let currentLang = "en";
+    const title = document.getElementById("title");
+    const text = document.getElementById("text");
+    const btns = document.querySelectorAll(".lang-switch button");
 
-    function toggleMenu() {
-      navbar.classList.toggle("show");
-    }
-
-    function toggleLangMenu() {
-      langOptions.style.display = langOptions.style.display === "block" ? "none" : "block";
-    }
-
-    function setLang(lang) {
-      currentLang = lang;
-      content.classList.add("fade");
-      setTimeout(() => content.classList.remove("fade"), 500);
-      langOptions.style.display = "none";
-      const btn = document.querySelector(".lang-select");
-      
-      if (lang === "en") {
-        btn.innerHTML = "🇬🇧 EN";
-        content.innerHTML = `
-          <h1>Policies & Terms</h1>
-          <div class="section"><h2>Privacy Policy</h2><p>We respect your privacy and collect only essential information, such as cookies, to enhance your browsing experience.</p></div>
-          <div class="section"><h2>Affiliate Disclosure</h2><p>Some links on this site are affiliate links. When you click and make a purchase, Zenoura may earn a small commission at no extra cost to you.</p></div>
-          <div class="section"><h2>Disclaimer</h2><p>Zenoura is not the official owner of any promoted products. Always verify details from the official source before making any purchase.</p></div>
-          <div class="section"><h2>Terms of Use</h2><p>By using our site, you agree to our terms and conditions. Information here is for educational and promotional purposes only.</p></div>
-        `;
-        document.body.dir = "ltr";
-      } else if (lang === "ar") {
-        btn.innerHTML = "🇸🇦 AR";
-        content.innerHTML = `
-          <h1>السياسات والشروط</h1>
-          <div class="section"><h2>سياسة الخصوصية</h2><p>نحن نحترم خصوصيتك ونجمع فقط المعلومات الأساسية مثل ملفات تعريف الارتباط لتحسين تجربتك.</p></div>
-          <div class="section"><h2>إفصاح التسويق بالعمولة</h2><p>بعض الروابط في هذا الموقع روابط تسويقية بالعمولة. عند النقر وإجراء عملية شراء، قد نحصل على عمولة صغيرة دون أي تكلفة إضافية عليك.</p></div>
-          <div class="section"><h2>إخلاء المسؤولية</h2><p>زينورا ليست المالك الرسمي لأي منتج يتم الترويج له. يُرجى التحقق من التفاصيل من المصدر الرسمي قبل أي عملية شراء.</p></div>
-          <div class="section"><h2>شروط الاستخدام</h2><p>باستخدامك لموقعنا، فإنك توافق على الشروط والأحكام الخاصة بنا. المعلومات هنا لأغراض تعليمية وتسويقية فقط.</p></div>
-        `;
-        document.body.dir = "rtl";
-      } else {
-        btn.innerHTML = "🇩🇪 DE";
-        content.innerHTML = `
-          <h1>Richtlinien & Nutzungsbedingungen</h1>
-          <div class="section"><h2>Datenschutzrichtlinie</h2><p>Wir respektieren Ihre Privatsphäre und sammeln nur grundlegende Informationen wie Cookies, um Ihr Erlebnis zu verbessern.</p></div>
-          <div class="section"><h2>Affiliate-Hinweis</h2><p>Einige Links auf dieser Website sind Affiliate-Links. Wenn Sie klicken und einen Kauf tätigen, erhält Zenoura möglicherweise eine kleine Provision ohne zusätzliche Kosten für Sie.</p></div>
-          <div class="section"><h2>Haftungsausschluss</h2><p>Zenoura ist nicht der offizielle Eigentümer der beworbenen Produkte. Bitte überprüfen Sie immer die offiziellen Informationen, bevor Sie einen Kauf tätigen.</p></div>
-          <div class="section"><h2>Nutzungsbedingungen</h2><p>Durch die Nutzung unserer Website stimmen Sie unseren Bedingungen zu. Alle Informationen dienen nur zu Bildungs- und Werbezwecken.</p></div>
-        `;
-        document.body.dir = "ltr";
+    const translations = {
+      en:{
+        title:"Privacy Policy",
+        text:`
+        <p>At Zenoura, we respect your privacy and are committed to protecting your personal information. We only collect minimal data to improve user experience.</p>
+        <h2>Cookies</h2>
+        <p>We use cookies to analyze traffic and enhance website performance. You may disable cookies at any time in your browser settings.</p>
+        <h2>Affiliate Links</h2>
+        <p>Some links on our site may be affiliate links, meaning we may earn a small commission if you make a purchase through them — at no extra cost to you.</p>
+        <h2>Data Security</h2>
+        <p>We use secure hosting and encryption technologies to protect your information from unauthorized access.</p>
+        <h2>Contact</h2>
+        <p>If you have questions regarding our privacy practices, email us at <strong>support@zen-oura.com</strong>.</p>
+        `
+      },
+      ar:{
+        title:"سياسة الخصوصية",
+        text:`
+        <p>في زينورا، نحترم خصوصيتك وملتزمون بحماية معلوماتك الشخصية. نحن نجمع الحد الأدنى من البيانات لتحسين تجربة المستخدم.</p>
+        <h2>ملفات تعريف الارتباط (Cookies)</h2>
+        <p>نستخدم الكوكيز لتحليل الزيارات وتحسين أداء الموقع. يمكنك إيقاف تشغيلها في إعدادات المتصفح في أي وقت.</p>
+        <h2>روابط التسويق بالعمولة</h2>
+        <p>قد يحتوي موقعنا على روابط تسويق بالعمولة، مما يعني أننا قد نحصل على عمولة صغيرة إذا قمت بالشراء عبرها دون أي تكلفة إضافية عليك.</p>
+        <h2>أمان البيانات</h2>
+        <p>نستخدم استضافة آمنة وتقنيات تشفير لحماية بياناتك من الوصول غير المصرح به.</p>
+        <h2>تواصل معنا</h2>
+        <p>إذا كانت لديك أي استفسارات حول سياسة الخصوصية، راسلنا عبر البريد <strong>support@zen-oura.com</strong>.</p>
+        `
+      },
+      de:{
+        title:"Datenschutzrichtlinie",
+        text:`
+        <p>Bei Zenoura respektieren wir Ihre Privatsphäre und verpflichten uns, Ihre persönlichen Informationen zu schützen. Wir erfassen nur minimale Daten zur Verbesserung der Nutzererfahrung.</p>
+        <h2>Cookies</h2>
+        <p>Wir verwenden Cookies, um den Datenverkehr zu analysieren und die Leistung der Website zu verbessern. Sie können Cookies jederzeit in Ihren Browsereinstellungen deaktivieren.</p>
+        <h2>Affiliate-Links</h2>
+        <p>Einige Links auf unserer Website sind Affiliate-Links. Wenn Sie über diese Links einkaufen, erhalten wir möglicherweise eine kleine Provision — ohne zusätzliche Kosten für Sie.</p>
+        <h2>Datensicherheit</h2>
+        <p>Wir verwenden sichere Hosting- und Verschlüsselungstechnologien, um Ihre Daten vor unbefugtem Zugriff zu schützen.</p>
+        <h2>Kontakt</h2>
+        <p>Wenn Sie Fragen zu unserer Datenschutzrichtlinie haben, kontaktieren Sie uns unter <strong>support@zen-oura.com</strong>.</p>
+        `
       }
-    }
+    };
 
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".lang-menu")) langOptions.style.display = "none";
+    btns.forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        btns.forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+        const lang=btn.dataset.lang;
+        const t=translations[lang];
+        title.textContent=t.title;
+        text.innerHTML=t.text;
+        document.body.dir=(lang==="ar")?"rtl":"ltr";
+      });
     });
   </script>
 </body>
