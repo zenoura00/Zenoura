@@ -1,307 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenoura</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zenoura | Home</title>
+  <meta name="description" content="Zenoura — Digital Luxury & Mindful Living">
+  <meta name="keywords" content="Zenoura, luxury, mindfulness, wellness, design">
+  <meta name="author" content="Zenoura">
 
-<!-- 🔹 Google Ads -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635"
-     crossorigin="anonymous"></script>
+  <!-- Google AdSense (script ready; replace slot IDs below with your real ones) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635"
+    crossorigin="anonymous"></script>
 
-<style>
-  :root {
-    --primary: #b95cff;
-    --bg1: #0e0111;
-    --bg2: #1a0b1d;
-    --text: #fff;
-  }
+  <style>
+    :root{
+      --primary:#b95cff;
+      --bg1:#0e0111;
+      --bg2:#1a0b1d;
+      --card: rgba(255,255,255,0.04);
+      --glass: rgba(255,255,255,0.03);
+      --text:#ffffff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Poppins",sans-serif;
+      background: linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
 
-  * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
-  body {
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(180deg, var(--bg1), var(--bg2));
-    color: var(--text);
-  }
+    /* Header */
+    .site-header{
+      position:fixed;top:0;left:0;right:0;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 26px;
+      background: rgba(10,6,12,0.6);
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid rgba(185,92,255,0.06);
+      z-index:1000;
+    }
+    .logo{font-weight:700;color:var(--primary);letter-spacing:4px;font-size:18px}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:#fff;text-decoration:none;font-weight:500;padding:8px 10px;border-radius:8px;transition:all .18s}
+    nav a:hover{color:var(--primary);background:rgba(185,92,255,0.04)}
+    .right-controls{display:flex;gap:10px;align-items:center}
 
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(20, 1, 23, 0.85);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    z-index: 100;
-  }
+    /* Language dropdown */
+    .lang-dropdown{position:relative}
+    .lang-btn{
+      display:flex;align-items:center;gap:8px;
+      background:transparent;border:1px solid rgba(185,92,255,0.28);
+      color:var(--primary);padding:6px 10px;border-radius:10px;cursor:pointer;font-weight:600;
+    }
+    .lang-list{
+      display:none;position:absolute;right:0;top:42px;
+      background:var(--glass);backdrop-filter:blur(6px);
+      border:1px solid rgba(185,92,255,0.08);padding:8px;border-radius:10px;min-width:110px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.5)
+    }
+    .lang-list button{
+      width:100%;display:flex;align-items:center;gap:8px;
+      padding:6px;border-radius:8px;border:0;background:transparent;color:#fff;cursor:pointer;font-weight:600
+    }
+    .lang-list button:hover{background:rgba(185,92,255,0.05);color:var(--primary)}
 
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--primary);
-    letter-spacing: 3px;
-  }
+    /* Hamburger */
+    .hamburger{display:none;background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
 
-  nav a {
-    margin: 0 15px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
+    /* Page layout */
+    .container{max-width:1100px;margin:120px auto 80px;padding:0 20px}
+    .hero{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;padding:40px 10px}
+    .hero h1{font-size:44px;color:var(--primary);letter-spacing:6px}
+    .hero p{max-width:760px;font-size:18px;color:rgba(255,255,255,0.92)}
+    .cta-group{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+    .btn{
+      display:inline-block;padding:12px 26px;border-radius:24px;text-decoration:none;font-weight:600;
+      background:var(--primary);color:#fff;transition:all .22s;
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(185,92,255,0.18)}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(185,92,255,0.12)}
 
-  nav a:hover {
-    color: var(--primary);
-  }
+    .card{
+      margin:26px auto;padding:22px;border-radius:16px;background:var(--card);
+      border:1px solid rgba(185,92,255,0.08);box-shadow:0 8px 30px rgba(0,0,0,0.5);
+      max-width:900px;text-align:left;
+    }
+    .card h2{color:var(--primary);margin-bottom:10px}
+    .card p{color:rgba(255,255,255,0.9)}
 
-  .language-btn {
-    background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 6px 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 500;
-  }
+    /* Ads container spacing */
+    .ads-top,.ads-bottom{margin:18px auto;text-align:center;max-width:980px}
 
-  section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 20px 60px;
-    text-align: center;
-  }
+    /* fade animation for language switching */
+    .fade-enter{opacity:0;transform:translateY(6px)}
+    .fade-enter.fade-enter-active{opacity:1;transform:none;transition:all .36s ease}
+    .fade-exit{opacity:1}
+    .fade-exit.fade-exit-active{opacity:0;transform:translateY(-6px);transition:all .28s ease}
 
-  #home h1 {
-    font-size: 52px;
-    letter-spacing: 8px;
-    color: var(--primary);
-  }
+    footer{padding:30px 20px;text-align:center;color:rgba(255,255,255,0.5);font-size:14px;margin-top:40px}
 
-  #home p {
-    max-width: 600px;
-    margin: 20px auto;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-  .home-buttons {
-    margin-top: 30px;
-  }
-
-  .home-buttons a {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 28px;
-    background: var(--primary);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: all 0.3s;
-    font-weight: 500;
-  }
-
-  .home-buttons a:hover {
-    background: #fff;
-    color: var(--primary);
-    box-shadow: 0 0 20px rgba(185, 92, 255, 0.4);
-  }
-
-  .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(185, 92, 255, 0.2);
-    border-radius: 18px;
-    width: 80%;
-    max-width: 800px;
-    margin: 25px 0;
-    padding: 25px;
-    text-align: left;
-    line-height: 1.7;
-    box-shadow: 0 0 15px rgba(185, 92, 255, 0.1);
-  }
-
-  .card h2 {
-    color: var(--primary);
-    margin-bottom: 10px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 40px;
-    color: #aaa;
-    font-size: 14px;
-  }
-
-  .ads-container {
-    margin: 40px auto;
-    text-align: center;
-  }
-
-  @media (max-width: 768px) {
-    header {flex-direction: column; gap: 10px;}
-    nav a {margin: 5px;}
-    #home h1 {font-size: 38px;}
-    .card {width: 90%;}
-  }
-</style>
+    @media (max-width:880px){
+      nav{display:none}
+      .hamburger{display:block}
+      .logo{font-size:16px}
+    }
+    @media (max-width:520px){
+      .hero h1{font-size:30px}
+      .hero p{font-size:15px}
+    }
+  </style>
 </head>
 <body>
-  <header>
+  <!-- Header -->
+  <header class="site-header">
     <div class="logo">ZENOURA</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#policy">Policy</a>
-      <a href="#affiliate">Affiliate</a>
-      <a href="#contact">Contact</a>
+
+    <nav class="main-nav" role="navigation" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="policy.html">Policy</a>
+      <a href="affiliate.html">Affiliate</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <button class="language-btn" onclick="switchLang()">العربية</button>
+
+    <div class="right-controls">
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-btn" id="langBtn">🇬🇧 EN</button>
+        <div class="lang-list" id="langList" aria-hidden="true">
+          <button data-lang="en">🇬🇧 EN</button>
+          <button data-lang="ar">🇸🇦 AR</button>
+          <button data-lang="de">🇩🇪 DE</button>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    </div>
   </header>
 
-  <section id="home">
-    <h1 id="homeTitle">Zenoura</h1>
-    <p id="homeText">
-      Digital Luxury & Mindful Living — discover elegance through modern design, wellness, and conscious growth.
-    </p>
-    <div class="home-buttons">
-      <a href="#about" id="exploreBtn">Explore</a>
-      <a href="#contact" id="contactBtn">Contact</a>
-    </div>
-  </section>
+  <!-- Main content container -->
+  <div class="container">
 
-  <section id="about">
-    <div class="card">
-      <h2 id="aboutTitle">About Zenoura</h2>
-      <p id="aboutText">
-        Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. 
-        We connect elegant design, mindfulness, and digital innovation to inspire a calm and meaningful life.
-      </p>
-    </div>
-
-    <!-- 🔹 Google Ad #1 -->
-    <div class="ads-container">
+    <!-- Top Ad (replace data-ad-slot with your slot ID) -->
+    <div class="ads-top">
       <ins class="adsbygoogle"
-           style="display:block; text-align:center;"
-           data-ad-client="ca-pub-2696059232288635"
-           data-ad-slot="1234567890"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+        style="display:block;text-align:center;"
+        data-ad-client="ca-pub-2696059232288635"
+        data-ad-slot="1234567890"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-  </section>
 
-  <section id="policy">
-    <div class="card">
-      <h2 id="policyTitle">Privacy Policy</h2>
-      <p id="policyText">
-        At Zenoura, we value your privacy. We collect minimal data such as cookies to improve experience and 
-        never share your personal details with third parties.
-      </p>
-    </div>
-  </section>
+    <!-- Hero -->
+    <main>
+      <section class="hero" id="contentArea">
+        <!-- English default content (JS will swap) -->
+        <h1 id="homeTitle">Zenoura</h1>
+        <p id="homeLead">Digital Luxury & Mindful Living — discover elegance through modern design, wellness, and conscious growth.</p>
 
-  <section id="affiliate">
-    <div class="card">
-      <h2 id="affiliateTitle">Affiliate Disclosure</h2>
-      <p id="affiliateText">
-        Some of our links are affiliate links. This means we may earn a small commission when you purchase 
-        through them — at no additional cost to you. We only recommend brands we trust and love.
-      </p>
-    </div>
-  </section>
+        <div class="cta-group">
+          <a class="btn" href="about.html" id="exploreBtn">Explore</a>
+          <a class="btn secondary" href="contact.html" id="contactBtn">Contact</a>
+        </div>
+      </section>
 
-  <section id="contact">
-    <div class="card">
-      <h2 id="contactTitle">Contact Us</h2>
-      <p id="contactText">
-        Have a question or collaboration idea? Reach us at 
-        <strong>support@zen-oura.com</strong>
-      </p>
-    </div>
+      <!-- Sample card (about-preview) -->
+      <section>
+        <div class="card" id="aboutCard">
+          <h2 id="aboutCardTitle">About Zenoura</h2>
+          <p id="aboutCardText">Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. We connect elegant design, mindfulness, and digital innovation to inspire a calm and meaningful life.</p>
+        </div>
+      </section>
+    </main>
 
-    <!-- 🔹 Google Ad #2 -->
-    <div class="ads-container">
+    <!-- Bottom Ad -->
+    <div class="ads-bottom">
       <ins class="adsbygoogle"
-           style="display:block; text-align:center;"
-           data-ad-client="ca-pub-2696059232288635"
-           data-ad-slot="9876543210"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+        style="display:block;text-align:center;"
+        data-ad-client="ca-pub-2696059232288635"
+        data-ad-slot="9876543210"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-  </section>
+
+  </div>
 
   <footer>© 2025 Zenoura. All rights reserved.</footer>
 
-<script>
-  let lang = "en";
-  const btn = document.querySelector(".language-btn");
+  <script>
+    // ================= Language / UI behavior =================
+    (function(){
+      const langBtn = document.getElementById('langBtn');
+      const langDropdown = document.getElementById('langList');
+      const langWrapper = document.getElementById('langDropdown');
+      const hamburger = document.getElementById('hamburger');
+      const mainNav = document.querySelector('.main-nav');
+      let currentLang = 'en'; // default
 
-  const texts = {
-    en: {
-      homeTitle: "Zenoura",
-      homeText: "Digital Luxury & Mindful Living — discover elegance through modern design, wellness, and conscious growth.",
-      exploreBtn: "Explore",
-      contactBtn: "Contact",
-      aboutTitle: "About Zenoura",
-      aboutText: "Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. We connect elegant design, mindfulness, and digital innovation to inspire a calm and meaningful life.",
-      policyTitle: "Privacy Policy",
-      policyText: "At Zenoura, we value your privacy. We collect minimal data such as cookies to improve experience and never share your personal details with third parties.",
-      affiliateTitle: "Affiliate Disclosure",
-      affiliateText: "Some of our links are affiliate links. This means we may earn a small commission when you purchase through them — at no additional cost to you. We only recommend brands we trust and love.",
-      contactTitle: "Contact Us",
-      contactText: "Have a question or collaboration idea? Reach us at <strong>support@zen-oura.com</strong>",
-      nextLang: "العربية",
-      dir: "ltr"
-    },
-    ar: {
-      homeTitle: "زينورا",
-      homeText: "الرفاهية الرقمية والعيش الواعي — اكتشف الأناقة من خلال التصميم العصري والرفاهية والنمو المتزن.",
-      exploreBtn: "اكتشف",
-      contactBtn: "تواصل معنا",
-      aboutTitle: "حول زينورا",
-      aboutText: "زينورا هي منصة أسلوب حياة رقمية تعيد تعريف الفخامة من خلال التوازن والرفاهية والإبداع. نربط بين التصميم الأنيق والوعي الذهني والابتكار الرقمي لإلهام حياة هادئة وذات معنى.",
-      policyTitle: "سياسة الخصوصية",
-      policyText: "في زينورا، نحترم خصوصيتك ونجمع فقط الحد الأدنى من البيانات مثل ملفات تعريف الارتباط لتحسين تجربتك، ولا نشارك بياناتك الشخصية مع أي طرف ثالث.",
-      affiliateTitle: "إفصاح التسويق بالعمولة",
-      affiliateText: "قد تحتوي بعض روابطنا على تسويق بالعمولة، مما يعني أننا نحصل على عمولة صغيرة عند الشراء عبرها — دون أي تكلفة إضافية عليك. نحن نوصي فقط بالعلامات التجارية التي نثق بها ونحبها.",
-      contactTitle: "تواصل معنا",
-      contactText: "هل لديك سؤال أو فكرة تعاون؟ يمكنك مراسلتنا على <strong>support@zen-oura.com</strong>",
-      nextLang: "Deutsch",
-      dir: "rtl"
-    },
-    de: {
-      homeTitle: "Zenoura",
-      homeText: "Digitale Luxus und achtsames Leben – entdecken Sie Eleganz durch modernes Design, Wohlbefinden und bewusstes Wachstum.",
-      exploreBtn: "Entdecken",
-      contactBtn: "Kontakt",
-      aboutTitle: "Über Zenoura",
-      aboutText: "Zenoura ist eine digitale Lifestyle-Plattform, die Luxus durch Balance, Wohlbefinden und Kreativität neu definiert. Wir verbinden elegantes Design, Achtsamkeit und digitale Innovation für ein ruhiges, bedeutungsvolles Leben.",
-      policyTitle: "Datenschutzrichtlinie",
-      policyText: "Bei Zenoura respektieren wir Ihre Privatsphäre. Wir sammeln minimale Daten wie Cookies zur Verbesserung der Erfahrung und geben Ihre persönlichen Daten niemals an Dritte weiter.",
-      affiliateTitle: "Affiliate-Offenlegung",
-      affiliateText: "Einige unserer Links sind Affiliate-Links. Das bedeutet, dass wir möglicherweise eine kleine Provision erhalten, wenn Sie über sie einkaufen – ohne zusätzliche Kosten für Sie. Wir empfehlen nur Marken, denen wir vertrauen.",
-      contactTitle: "Kontakt",
-      contactText: "Haben Sie eine Frage oder möchten Sie mit uns zusammenarbeiten? Schreiben Sie uns an <strong>support@zen-oura.com</strong>",
-      nextLang: "English",
-      dir: "ltr"
-    }
-  };
+      // language content sets for this page (index)
+      const content = {
+        en: {
+          homeTitle: "Zenoura",
+          homeLead: "Digital Luxury & Mindful Living — discover elegance through modern design, wellness, and conscious growth.",
+          exploreBtn: "Explore",
+          contactBtn: "Contact",
+          aboutCardTitle: "About Zenoura",
+          aboutCardText: "Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. We connect elegant design, mindfulness, and digital innovation to inspire a calm and meaningful life."
+        },
+        ar: {
+          homeTitle: "زينورا",
+          homeLead: "الرفاهية الرقمية والعيش الواعي — اكتشف الأناقة من خلال التصميم العصري والرفاهية والنمو المتزن.",
+          exploreBtn: "اكتشف",
+          contactBtn: "تواصل معنا",
+          aboutCardTitle: "حول زينورا",
+          aboutCardText: "زينورا هي منصة أسلوب حياة رقمية تعيد تعريف الفخامة من خلال التوازن والرفاهية والإبداع. نربط بين التصميم الأنيق والوعي الذهني والابتكار الرقمي لإلهام حياة هادئة وذات معنى."
+        },
+        de: {
+          homeTitle: "Zenoura",
+          homeLead: "Digitale Luxus und achtsames Leben – entdecken Sie Eleganz durch modernes Design, Wohlbefinden und bewusstes Wachstum.",
+          exploreBtn: "Entdecken",
+          contactBtn: "Kontakt",
+          aboutCardTitle: "Über Zenoura",
+          aboutCardText: "Zenoura ist eine digitale Lifestyle-Plattform, die Luxus durch Balance, Wohlbefinden und Kreativität neu definiert. Wir verbinden elegantes Design, Achtsamkeit und digitale Innovation für ein ruhiges, bedeutungsvolles Leben."
+        }
+      };
 
-  function switchLang() {
-    lang = lang === "en" ? "ar" : lang === "ar" ? "de" : "en";
-    const t = texts[lang];
-    document.body.style.direction = t.dir;
-    btn.textContent = t.nextLang;
-    for (const id in t) {
-      if (id.endsWith("Text") || id.endsWith("Title") || id.endsWith("Btn"))
-        document.getElementById(id).innerHTML = t[id];
-    }
-  }
-</script>
+      // Toggle dropdown
+      langBtn.addEventListener('click', (e)=> {
+        e.stopPropagation();
+        langListToggle();
+      });
+
+      function langListToggle(){ 
+        langDropdown.style.display = (langDropdown.style.display === 'block') ? 'none' : 'block';
+        langDropdown.setAttribute('aria-hidden', langDropdown.style.display === 'none');
+      }
+
+      // Click outside to close language list
+      document.addEventListener('click', (e)=> {
+        if(!langWrapper.contains(e.target)){ langDropdown.style.display = 'none'; langDropdown.setAttribute('aria-hidden', 'true') }
+      });
+
+      // Language buttons
+      document.querySelectorAll('#langList button').forEach(btn => {
+        btn.addEventListener('click', ()=> {
+          const newLang = btn.getAttribute('data-lang');
+          setLanguage(newLang);
+          langDropdown.style.display = 'none';
+        });
+      });
+
+      function setLanguage(newLang){
+        if(newLang === currentLang) return;
+        currentLang = newLang;
+        langBtn.textContent = (newLang === 'en')? "🇬🇧 EN" : (newLang === 'ar')? "🇸🇦 AR" : "🇩🇪 DE";
+        // direction
+        document.documentElement.dir = (newLang === 'ar')? 'rtl' : 'ltr';
+
+        // fade effect on container texts
+        const targets = {
+          homeTitle: document.getElementById('homeTitle'),
+          homeLead: document.getElementById('homeLead'),
+          exploreBtn: document.getElementById('exploreBtn'),
+          contactBtn: document.getElementById('contactBtn'),
+          aboutCardTitle: document.getElementById('aboutCardTitle'),
+          aboutCardText: document.getElementById('aboutCardText')
+        };
+
+        // animate out
+        Object.values(targets).forEach(el=>{
+          el.classList.add('fade-exit');
+          setTimeout(()=> el.classList.add('fade-exit-active'), 10);
+        });
+
+        setTimeout(()=>{
+          // set new text
+          const txt = content[newLang];
+          targets.homeTitle.innerHTML = txt.homeTitle;
+          targets.homeLead.innerHTML = txt.homeLead;
+          targets.exploreBtn.innerHTML = txt.exploreBtn;
+          targets.contactBtn.innerHTML = txt.contactBtn;
+          targets.aboutCardTitle.innerHTML = txt.aboutCardTitle;
+          targets.aboutCardText.innerHTML = txt.aboutCardText;
+
+          // animate in
+          Object.values(targets).forEach(el=>{
+            el.classList.remove('fade-exit','fade-exit-active');
+            el.classList.add('fade-enter');
+            setTimeout(()=> el.classList.add('fade-enter-active'), 10);
+            setTimeout(()=> el.classList.remove('fade-enter','fade-enter-active'), 420);
+          });
+        }, 280);
+      }
+
+      // Hamburger mobile toggle
+      hamburger.addEventListener('click', ()=> {
+        if(mainNav.style.display === 'flex'){
+          mainNav.style.display = 'none';
+        } else {
+          mainNav.style.display = 'flex';
+          mainNav.style.flexDirection = 'column';
+          mainNav.style.position = 'absolute';
+          mainNav.style.top = '64px';
+          mainNav.style.right = '18px';
+          mainNav.style.background = 'rgba(10,6,12,0.95)';
+          mainNav.style.padding = '12px';
+          mainNav.style.borderRadius = '10px';
+          mainNav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+        }
+      });
+
+      // Initialize default language (en)
+      setLanguage('en');
+    })();
+  </script>
 </body>
 </html>
