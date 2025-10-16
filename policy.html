@@ -1,211 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zenoura | Privacy Policy</title>
-  <meta name="description" content="Zenoura Privacy Policy — how we handle your data.">
-  <meta name="keywords" content="privacy, zenoura, cookies, data">
-  <meta name="author" content="Zenoura">
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635"
-    crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenoura | Policy</title>
+  <meta name="description" content="Zenoura privacy policy, disclaimer, and affiliate disclosure in English, Arabic, and German.">
   <style>
-    /* Same base styles (standalone page) */
-    :root{--primary:#b95cff;--bg1:#0e0111;--bg2:#1a0b1d;--card: rgba(255,255,255,0.04);--glass: rgba(255,255,255,0.03);--text:#fff}
-    *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
-    body{font-family:"Poppins",sans-serif;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);line-height:1.6}
-    .site-header{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:14px 26px;background:rgba(10,6,12,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(185,92,255,0.06);z-index:1000}
-    .logo{font-weight:700;color:var(--primary);letter-spacing:4px;font-size:18px}
-    nav{display:flex;gap:14px;align-items:center}
-    nav a{color:#fff;text-decoration:none;font-weight:500;padding:8px 10px;border-radius:8px;transition:all .18s}
-    nav a:hover{color:var(--primary);background:rgba(185,92,255,0.04)}
-    .right-controls{display:flex;gap:10px;align-items:center}
-    .lang-dropdown{position:relative}
-    .lang-btn{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(185,92,255,0.28);color:var(--primary);padding:6px 10px;border-radius:10px;cursor:pointer;font-weight:600}
-    .lang-list{display:none;position:absolute;right:0;top:42px;background:var(--glass);backdrop-filter:blur(6px);border:1px solid rgba(185,92,255,0.08);padding:8px;border-radius:10px;min-width:110px;box-shadow:0 6px 18px rgba(0,0,0,0.5)}
-    .lang-list button{width:100%;display:flex;align-items:center;gap:8px;padding:6px;border-radius:8px;border:0;background:transparent;color:#fff;cursor:pointer;font-weight:600}
-    .lang-list button:hover{background:rgba(185,92,255,0.05);color:var(--primary)}
-    .hamburger{display:none;background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
-    .container{max-width:1100px;margin:120px auto 80px;padding:0 20px}
-    .hero{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;padding:40px 10px}
-    .hero h1{font-size:36px;color:var(--primary);letter-spacing:4px}
-    .card{margin:18px auto;padding:20px;border-radius:12px;background:var(--card);border:1px solid rgba(185,92,255,0.08);max-width:1000px}
-    .card h2{color:var(--primary);margin-bottom:8px}
-    .card p, .card li{color:rgba(255,255,255,0.9)}
-    .ads-top,.ads-bottom{margin:18px auto;text-align:center;max-width:980px}
-    footer{padding:30px 20px;text-align:center;color:rgba(255,255,255,0.5);font-size:14px;margin-top:40px}
-    @media (max-width:880px){nav{display:none}.hamburger{display:block}.logo{font-size:16px}}
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0b0010, #1a0120);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(10, 0, 20, 0.85);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      border-bottom: 1px solid rgba(185, 92, 255, 0.3);
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 26px;
+      color: #b95cff;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #b95cff;
+    }
+
+    .lang-menu {
+      position: relative;
+    }
+
+    .lang-select {
+      background: none;
+      border: 1px solid #b95cff;
+      color: #b95cff;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .lang-options {
+      display: none;
+      position: absolute;
+      top: 38px;
+      right: 0;
+      background: #120016;
+      border: 1px solid #b95cff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .lang-options button {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 8px 12px;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-options button:hover {
+      background: rgba(185, 92, 255, 0.2);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #b95cff;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: rgba(15, 0, 20, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-left: 1px solid #b95cff;
+        padding: 15px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    main {
+      padding-top: 90px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 42px;
+      color: #b95cff;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .section {
+      background-color: rgba(255,255,255,0.03);
+      border: 1px solid rgba(185,92,255,0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+      text-align: left;
+      box-shadow: 0 0 15px rgba(185, 92, 255, 0.15);
+    }
+
+    .section h2 {
+      color: #b95cff;
+      font-size: 22px;
+    }
+
+    .section p {
+      line-height: 1.6;
+      font-size: 16px;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #999;
+      border-top: 1px solid rgba(185, 92, 255, 0.3);
+      margin-top: 50px;
+    }
+
+    .fade {
+      animation: fade 0.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <div class="logo">ZENOURA</div>
-    <nav class="main-nav" role="navigation" aria-label="Main">
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+    <nav id="navbar">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="policy.html">Policy</a>
       <a href="affiliate.html">Affiliate</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="right-controls">
-      <div class="lang-dropdown" id="langDropdown">
-        <button class="lang-btn" id="langBtn">🇬🇧 EN</button>
-        <div class="lang-list" id="langList" aria-hidden="true">
-          <button data-lang="en">🇬🇧 EN</button>
-          <button data-lang="ar">🇸🇦 AR</button>
-          <button data-lang="de">🇩🇪 DE</button>
-        </div>
+    <div class="lang-menu">
+      <button class="lang-select" onclick="toggleLangMenu()">🇬🇧 EN</button>
+      <div class="lang-options" id="langOptions">
+        <button onclick="setLang('en')">🇬🇧 EN</button>
+        <button onclick="setLang('ar')">🇸🇦 AR</button>
+        <button onclick="setLang('de')">🇩🇪 DE</button>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
     </div>
   </header>
 
-  <div class="container">
-    <div class="ads-top">
-      <ins class="adsbygoogle"
-        style="display:block;text-align:center;"
-        data-ad-client="ca-pub-2696059232288635"
-        data-ad-slot="1234567890"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <!-- Google Ad Top -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-2696059232288635" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <main id="content" class="fade">
+    <h1>Policies & Terms</h1>
+
+    <div class="section">
+      <h2>Privacy Policy</h2>
+      <p>We respect your privacy and collect only essential information, such as cookies, to enhance your browsing experience.</p>
     </div>
 
-    <main>
-      <section class="hero" id="contentArea">
-        <h1 id="policyTitle">Privacy Policy</h1>
-        <p id="policyLead">Last updated: October 2025</p>
-      </section>
-
-      <section>
-        <div class="card">
-          <h2 id="infoTitle">Information We Collect</h2>
-          <p id="infoText">We may collect basic information such as your name and email (when you contact us), and anonymous analytics data to improve our website performance.</p>
-        </div>
-
-        <div class="card">
-          <h2 id="useTitle">How We Use Your Information</h2>
-          <p id="useText">We use data to improve our services, respond to inquiries, and deliver relevant affiliate recommendations. We never sell or rent your personal data.</p>
-        </div>
-
-        <div class="card">
-          <h2 id="affiliateTitle">Affiliate Links & Tracking</h2>
-          <p id="affiliateText">Our site contains affiliate links that may use cookies for tracking. Purchases made via these links may generate a commission for us at no extra cost to you.</p>
-        </div>
-      </section>
-    </main>
-
-    <div class="ads-bottom">
-      <ins class="adsbygoogle"
-        style="display:block;text-align:center;"
-        data-ad-client="ca-pub-2696059232288635"
-        data-ad-slot="9876543210"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="section">
+      <h2>Affiliate Disclosure</h2>
+      <p>Some links on this site are affiliate links. When you click and make a purchase, Zenoura may earn a small commission at no extra cost to you.</p>
     </div>
-  </div>
+
+    <div class="section">
+      <h2>Disclaimer</h2>
+      <p>Zenoura is not the official owner of any promoted products. Always verify details from the official source before making any purchase.</p>
+    </div>
+
+    <div class="section">
+      <h2>Terms of Use</h2>
+      <p>By using our site, you agree to our terms and conditions. Information here is for educational and promotional purposes only.</p>
+    </div>
+  </main>
+
+  <!-- Google Ad Bottom -->
+  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-2696059232288635" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <footer>© 2025 Zenoura. All rights reserved.</footer>
 
   <script>
-    (function(){
-      const langBtn = document.getElementById('langBtn');
-      const langDropdown = document.getElementById('langList');
-      const langWrapper = document.getElementById('langDropdown');
-      const hamburger = document.getElementById('hamburger');
-      const mainNav = document.querySelector('.main-nav');
-      let currentLang = 'en';
+    const navbar = document.getElementById("navbar");
+    const langOptions = document.getElementById("langOptions");
+    const content = document.getElementById("content");
+    let currentLang = "en";
 
-      const content = {
-        en:{
-          policyTitle:"Privacy Policy",
-          policyLead:"Last updated: October 2025",
-          infoTitle:"Information We Collect",
-          infoText:"We may collect basic information such as your name and email (when you contact us), and anonymous analytics data to improve our website performance.",
-          useTitle:"How We Use Your Information",
-          useText:"We use data to improve our services, respond to inquiries, and deliver relevant affiliate recommendations. We never sell or rent your personal data.",
-          affiliateTitle:"Affiliate Links & Tracking",
-          affiliateText:"Our site contains affiliate links that may use cookies for tracking. Purchases made via these links may generate a commission for us at no extra cost to you."
-        },
-        ar:{
-          policyTitle:"سياسة الخصوصية",
-          policyLead:"آخر تحديث: أكتوبر 2025",
-          infoTitle:"المعلومات التي نجمعها",
-          infoText:"قد نجمع معلومات أساسية مثل اسمك وبريدك الإلكتروني (عند التواصل)، وبيانات تحليلات مجهولة لتحسين أداء الموقع.",
-          useTitle:"كيف نستخدم معلوماتك",
-          useText:"نستخدم البيانات لتحسين خدماتنا والرد على الاستفسارات وتقديم توصيات أفليت مناسبة. لا نبيع أو نؤجر بياناتك الشخصية.",
-          affiliateTitle:"روابط تتبع الشركاء",
-          affiliateText:"يحتوي موقعنا على روابط تسويقية قد تستخدم الكوكيز للتتبع. قد تدر هذه الروابط عمولة لنا دون أي تكلفة إضافية عليك."
-        },
-        de:{
-          policyTitle:"Datenschutzrichtlinie",
-          policyLead:"Zuletzt aktualisiert: Oktober 2025",
-          infoTitle:"Informationen, die wir sammeln",
-          infoText:"Wir können grundlegende Informationen wie Name und E-Mail (bei Kontaktaufnahme) sowie anonyme Analysedaten zur Verbesserung der Website sammeln.",
-          useTitle:"Wie wir Ihre Informationen verwenden",
-          useText:"Wir verwenden Daten zur Verbesserung unserer Dienste, zur Beantwortung von Anfragen und zur Bereitstellung relevanter Affiliate-Empfehlungen. Wir verkaufen oder vermieten Ihre personenbezogenen Daten nicht.",
-          affiliateTitle:"Affiliate-Links & Tracking",
-          affiliateText:"Unsere Website enthält Affiliate-Links, die Cookies zur Verfolgung verwenden können. Einkäufe über diese Links können uns eine Provision einbringen, ohne zusätzliche Kosten für Sie."
-        }
-      };
+    function toggleMenu() {
+      navbar.classList.toggle("show");
+    }
 
-      langBtn.addEventListener('click',(e)=>{ e.stopPropagation(); langListToggle(); });
-      function langListToggle(){ langDropdown.style.display = (langDropdown.style.display === 'block') ? 'none' : 'block'; langDropdown.setAttribute('aria-hidden', langDropdown.style.display === 'none')}
-      document.addEventListener('click',(e)=>{ if(!langWrapper.contains(e.target)){ langDropdown.style.display = 'none'; langDropdown.setAttribute('aria-hidden','true') }});
-      document.querySelectorAll('#langList button').forEach(btn => btn.addEventListener('click', ()=> { setLanguage(btn.getAttribute('data-lang')); langDropdown.style.display = 'none' }));
+    function toggleLangMenu() {
+      langOptions.style.display = langOptions.style.display === "block" ? "none" : "block";
+    }
 
-      function setLanguage(newLang){
-        if(newLang === currentLang) return;
-        currentLang = newLang;
-        langBtn.textContent = (newLang === 'en')? "🇬🇧 EN" : (newLang === 'ar')? "🇸🇦 AR" : "🇩🇪 DE";
-        document.documentElement.dir = (newLang === 'ar')? 'rtl' : 'ltr';
-
-        const map = {
-          policyTitle: document.getElementById('policyTitle'),
-          policyLead: document.getElementById('policyLead'),
-          infoTitle: document.getElementById('infoTitle'),
-          infoText: document.getElementById('infoText'),
-          useTitle: document.getElementById('useTitle'),
-          useText: document.getElementById('useText'),
-          affiliateTitle: document.getElementById('affiliateTitle'),
-          affiliateText: document.getElementById('affiliateText')
-        };
-
-        Object.values(map).forEach(el=> { el.style.opacity = 0; el.style.transform = 'translateY(-6px)'; });
-        setTimeout(()=>{
-          const t = content[newLang];
-          map.policyTitle.innerHTML = t.policyTitle;
-          map.policyLead.innerHTML = t.policyLead;
-          map.infoTitle.innerHTML = t.infoTitle;
-          map.infoText.innerHTML = t.infoText;
-          map.useTitle.innerHTML = t.useTitle;
-          map.useText.innerHTML = t.useText;
-          map.affiliateTitle.innerHTML = t.affiliateTitle;
-          map.affiliateText.innerHTML = t.affiliateText;
-          Object.values(map).forEach(el=> { el.style.opacity = 1; el.style.transform = 'none'; el.style.transition = 'all .36s ease' });
-        },260);
+    function setLang(lang) {
+      currentLang = lang;
+      content.classList.add("fade");
+      setTimeout(() => content.classList.remove("fade"), 500);
+      langOptions.style.display = "none";
+      const btn = document.querySelector(".lang-select");
+      
+      if (lang === "en") {
+        btn.innerHTML = "🇬🇧 EN";
+        content.innerHTML = `
+          <h1>Policies & Terms</h1>
+          <div class="section"><h2>Privacy Policy</h2><p>We respect your privacy and collect only essential information, such as cookies, to enhance your browsing experience.</p></div>
+          <div class="section"><h2>Affiliate Disclosure</h2><p>Some links on this site are affiliate links. When you click and make a purchase, Zenoura may earn a small commission at no extra cost to you.</p></div>
+          <div class="section"><h2>Disclaimer</h2><p>Zenoura is not the official owner of any promoted products. Always verify details from the official source before making any purchase.</p></div>
+          <div class="section"><h2>Terms of Use</h2><p>By using our site, you agree to our terms and conditions. Information here is for educational and promotional purposes only.</p></div>
+        `;
+        document.body.dir = "ltr";
+      } else if (lang === "ar") {
+        btn.innerHTML = "🇸🇦 AR";
+        content.innerHTML = `
+          <h1>السياسات والشروط</h1>
+          <div class="section"><h2>سياسة الخصوصية</h2><p>نحن نحترم خصوصيتك ونجمع فقط المعلومات الأساسية مثل ملفات تعريف الارتباط لتحسين تجربتك.</p></div>
+          <div class="section"><h2>إفصاح التسويق بالعمولة</h2><p>بعض الروابط في هذا الموقع روابط تسويقية بالعمولة. عند النقر وإجراء عملية شراء، قد نحصل على عمولة صغيرة دون أي تكلفة إضافية عليك.</p></div>
+          <div class="section"><h2>إخلاء المسؤولية</h2><p>زينورا ليست المالك الرسمي لأي منتج يتم الترويج له. يُرجى التحقق من التفاصيل من المصدر الرسمي قبل أي عملية شراء.</p></div>
+          <div class="section"><h2>شروط الاستخدام</h2><p>باستخدامك لموقعنا، فإنك توافق على الشروط والأحكام الخاصة بنا. المعلومات هنا لأغراض تعليمية وتسويقية فقط.</p></div>
+        `;
+        document.body.dir = "rtl";
+      } else {
+        btn.innerHTML = "🇩🇪 DE";
+        content.innerHTML = `
+          <h1>Richtlinien & Nutzungsbedingungen</h1>
+          <div class="section"><h2>Datenschutzrichtlinie</h2><p>Wir respektieren Ihre Privatsphäre und sammeln nur grundlegende Informationen wie Cookies, um Ihr Erlebnis zu verbessern.</p></div>
+          <div class="section"><h2>Affiliate-Hinweis</h2><p>Einige Links auf dieser Website sind Affiliate-Links. Wenn Sie klicken und einen Kauf tätigen, erhält Zenoura möglicherweise eine kleine Provision ohne zusätzliche Kosten für Sie.</p></div>
+          <div class="section"><h2>Haftungsausschluss</h2><p>Zenoura ist nicht der offizielle Eigentümer der beworbenen Produkte. Bitte überprüfen Sie immer die offiziellen Informationen, bevor Sie einen Kauf tätigen.</p></div>
+          <div class="section"><h2>Nutzungsbedingungen</h2><p>Durch die Nutzung unserer Website stimmen Sie unseren Bedingungen zu. Alle Informationen dienen nur zu Bildungs- und Werbezwecken.</p></div>
+        `;
+        document.body.dir = "ltr";
       }
+    }
 
-      hamburger.addEventListener('click', ()=> {
-        if(mainNav.style.display === 'flex'){ mainNav.style.display = 'none'; }
-        else {
-          mainNav.style.display = 'flex';
-          mainNav.style.flexDirection = 'column';
-          mainNav.style.position = 'absolute';
-          mainNav.style.top = '64px';
-          mainNav.style.right = '18px';
-          mainNav.style.background = 'rgba(10,6,12,0.95)';
-          mainNav.style.padding = '12px';
-          mainNav.style.borderRadius = '10px';
-          mainNav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-        }
-      });
-
-      setLanguage('en');
-    })();
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".lang-menu")) langOptions.style.display = "none";
+    });
   </script>
 </body>
 </html>
