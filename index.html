@@ -1,322 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zenoura | Home</title>
-  <meta name="description" content="Zenoura — Digital Luxury & Mindful Living">
-  <meta name="keywords" content="Zenoura, luxury, mindfulness, wellness, design">
-  <meta name="author" content="Zenoura">
-
-  <!-- Google AdSense (script ready; replace slot IDs below with your real ones) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635"
-    crossorigin="anonymous"></script>
-
+  <meta name="description" content="Welcome to Zenoura — discover clarity, focus, and modern design in one place.">
   <style>
-    :root{
-      --primary:#b95cff;
-      --bg1:#0e0111;
-      --bg2:#1a0b1d;
-      --card: rgba(255,255,255,0.04);
-      --glass: rgba(255,255,255,0.03);
-      --text:#ffffff;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family: "Poppins",sans-serif;
-      background: linear-gradient(180deg,var(--bg1),var(--bg2));
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0b0010, #1a0120);
+      color: #fff;
+      scroll-behavior: smooth;
     }
 
-    /* Header */
-    .site-header{
-      position:fixed;top:0;left:0;right:0;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 26px;
-      background: rgba(10,6,12,0.6);
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(10, 0, 20, 0.85);
       backdrop-filter: blur(6px);
-      border-bottom:1px solid rgba(185,92,255,0.06);
-      z-index:1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      border-bottom: 1px solid rgba(185, 92, 255, 0.3);
+      z-index: 999;
     }
-    .logo{font-weight:700;color:var(--primary);letter-spacing:4px;font-size:18px}
-    nav{display:flex;gap:14px;align-items:center}
-    nav a{color:#fff;text-decoration:none;font-weight:500;padding:8px 10px;border-radius:8px;transition:all .18s}
-    nav a:hover{color:var(--primary);background:rgba(185,92,255,0.04)}
-    .right-controls{display:flex;gap:10px;align-items:center}
 
-    /* Language dropdown */
-    .lang-dropdown{position:relative}
-    .lang-btn{
-      display:flex;align-items:center;gap:8px;
-      background:transparent;border:1px solid rgba(185,92,255,0.28);
-      color:var(--primary);padding:6px 10px;border-radius:10px;cursor:pointer;font-weight:600;
+    .logo {
+      font-size: 26px;
+      color: #b95cff;
+      font-weight: 700;
+      letter-spacing: 3px;
     }
-    .lang-list{
-      display:none;position:absolute;right:0;top:42px;
-      background:var(--glass);backdrop-filter:blur(6px);
-      border:1px solid rgba(185,92,255,0.08);padding:8px;border-radius:10px;min-width:110px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.5)
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
-    .lang-list button{
-      width:100%;display:flex;align-items:center;gap:8px;
-      padding:6px;border-radius:8px;border:0;background:transparent;color:#fff;cursor:pointer;font-weight:600
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-    .lang-list button:hover{background:rgba(185,92,255,0.05);color:var(--primary)}
 
-    /* Hamburger */
-    .hamburger{display:none;background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
-
-    /* Page layout */
-    .container{max-width:1100px;margin:120px auto 80px;padding:0 20px}
-    .hero{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;padding:40px 10px}
-    .hero h1{font-size:44px;color:var(--primary);letter-spacing:6px}
-    .hero p{max-width:760px;font-size:18px;color:rgba(255,255,255,0.92)}
-    .cta-group{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:18px}
-    .btn{
-      display:inline-block;padding:12px 26px;border-radius:24px;text-decoration:none;font-weight:600;
-      background:var(--primary);color:#fff;transition:all .22s;
+    nav a:hover {
+      color: #b95cff;
     }
-    .btn.secondary{background:transparent;border:1px solid rgba(185,92,255,0.18)}
-    .btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(185,92,255,0.12)}
 
-    .card{
-      margin:26px auto;padding:22px;border-radius:16px;background:var(--card);
-      border:1px solid rgba(185,92,255,0.08);box-shadow:0 8px 30px rgba(0,0,0,0.5);
-      max-width:900px;text-align:left;
+    .lang-menu {
+      position: relative;
     }
-    .card h2{color:var(--primary);margin-bottom:10px}
-    .card p{color:rgba(255,255,255,0.9)}
 
-    /* Ads container spacing */
-    .ads-top,.ads-bottom{margin:18px auto;text-align:center;max-width:980px}
-
-    /* fade animation for language switching */
-    .fade-enter{opacity:0;transform:translateY(6px)}
-    .fade-enter.fade-enter-active{opacity:1;transform:none;transition:all .36s ease}
-    .fade-exit{opacity:1}
-    .fade-exit.fade-exit-active{opacity:0;transform:translateY(-6px);transition:all .28s ease}
-
-    footer{padding:30px 20px;text-align:center;color:rgba(255,255,255,0.5);font-size:14px;margin-top:40px}
-
-    @media (max-width:880px){
-      nav{display:none}
-      .hamburger{display:block}
-      .logo{font-size:16px}
+    .lang-select {
+      background: none;
+      border: 1px solid #b95cff;
+      color: #b95cff;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
     }
-    @media (max-width:520px){
-      .hero h1{font-size:30px}
-      .hero p{font-size:15px}
+
+    .lang-options {
+      display: none;
+      position: absolute;
+      top: 38px;
+      right: 0;
+      background: #120016;
+      border: 1px solid #b95cff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .lang-options button {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 8px 12px;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-options button:hover {
+      background: rgba(185, 92, 255, 0.2);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #b95cff;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: rgba(15, 0, 20, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-left: 1px solid #b95cff;
+        padding: 15px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    main {
+      padding-top: 90px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #b95cff;
+      letter-spacing: 6px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 18px;
+      color: #ddd;
+      margin-bottom: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #999;
+      border-top: 1px solid rgba(185, 92, 255, 0.3);
+      margin-top: 50px;
+    }
+
+    .fade {
+      animation: fade 0.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
+  <header>
     <div class="logo">ZENOURA</div>
-
-    <nav class="main-nav" role="navigation" aria-label="Main">
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+    <nav id="navbar">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="policy.html">Policy</a>
       <a href="affiliate.html">Affiliate</a>
       <a href="contact.html">Contact</a>
     </nav>
-
-    <div class="right-controls">
-      <div class="lang-dropdown" id="langDropdown">
-        <button class="lang-btn" id="langBtn">🇬🇧 EN</button>
-        <div class="lang-list" id="langList" aria-hidden="true">
-          <button data-lang="en">🇬🇧 EN</button>
-          <button data-lang="ar">🇸🇦 AR</button>
-          <button data-lang="de">🇩🇪 DE</button>
-        </div>
+    <div class="lang-menu">
+      <button class="lang-select" onclick="toggleLangMenu()">🇬🇧 EN</button>
+      <div class="lang-options" id="langOptions">
+        <button onclick="setLang('en')">🇬🇧 EN</button>
+        <button onclick="setLang('ar')">🇸🇦 AR</button>
+        <button onclick="setLang('de')">🇩🇪 DE</button>
       </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
     </div>
   </header>
 
-  <!-- Main content container -->
-  <div class="container">
+  <!-- Google Ad Top -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-2696059232288635" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-    <!-- Top Ad (replace data-ad-slot with your slot ID) -->
-    <div class="ads-top">
-      <ins class="adsbygoogle"
-        style="display:block;text-align:center;"
-        data-ad-client="ca-pub-2696059232288635"
-        data-ad-slot="1234567890"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+  <main id="content" class="fade">
+    <h1>Welcome to Zenoura</h1>
+    <p>Experience balance, creativity, and innovation. Zenoura brings together design, technology, and tranquility to inspire your journey.</p>
+  </main>
 
-    <!-- Hero -->
-    <main>
-      <section class="hero" id="contentArea">
-        <!-- English default content (JS will swap) -->
-        <h1 id="homeTitle">Zenoura</h1>
-        <p id="homeLead">Digital Luxury & Mindful Living — discover elegance through modern design, wellness, and conscious growth.</p>
-
-        <div class="cta-group">
-          <a class="btn" href="about.html" id="exploreBtn">Explore</a>
-          <a class="btn secondary" href="contact.html" id="contactBtn">Contact</a>
-        </div>
-      </section>
-
-      <!-- Sample card (about-preview) -->
-      <section>
-        <div class="card" id="aboutCard">
-          <h2 id="aboutCardTitle">About Zenoura</h2>
-          <p id="aboutCardText">Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. We connect elegant design, mindfulness, and digital innovation to inspire a calm and meaningful life.</p>
-        </div>
-      </section>
-    </main>
-
-    <!-- Bottom Ad -->
-    <div class="ads-bottom">
-      <ins class="adsbygoogle"
-        style="display:block;text-align:center;"
-        data-ad-client="ca-pub-2696059232288635"
-        data-ad-slot="9876543210"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-  </div>
+  <!-- Google Ad Bottom -->
+  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-2696059232288635" data-ad-slot="9876543210" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <footer>© 2025 Zenoura. All rights reserved.</footer>
 
   <script>
-    // ================= Language / UI behavior =================
-    (function(){
-      const langBtn = document.getElementById('langBtn');
-      const langDropdown = document.getElementById('langList');
-      const langWrapper = document.getElementById('langDropdown');
-      const hamburger = document.getElementById('hamburger');
-      const mainNav = document.querySelector('.main-nav');
-      let currentLang = 'en'; // default
+    const navbar = document.getElementById("navbar");
+    const langOptions = document.getElementById("langOptions");
+    const content = document.getElementById("content");
+    let currentLang = "en";
 
-      // language content sets for this page (index)
-      const content = {
-        en: {
-          homeTitle: "Zenoura",
-          homeLead: "Digital Luxury & Mindful Living — discover elegance through modern design, wellness, and conscious growth.",
-          exploreBtn: "Explore",
-          contactBtn: "Contact",
-          aboutCardTitle: "About Zenoura",
-          aboutCardText: "Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. We connect elegant design, mindfulness, and digital innovation to inspire a calm and meaningful life."
-        },
-        ar: {
-          homeTitle: "زينورا",
-          homeLead: "الرفاهية الرقمية والعيش الواعي — اكتشف الأناقة من خلال التصميم العصري والرفاهية والنمو المتزن.",
-          exploreBtn: "اكتشف",
-          contactBtn: "تواصل معنا",
-          aboutCardTitle: "حول زينورا",
-          aboutCardText: "زينورا هي منصة أسلوب حياة رقمية تعيد تعريف الفخامة من خلال التوازن والرفاهية والإبداع. نربط بين التصميم الأنيق والوعي الذهني والابتكار الرقمي لإلهام حياة هادئة وذات معنى."
-        },
-        de: {
-          homeTitle: "Zenoura",
-          homeLead: "Digitale Luxus und achtsames Leben – entdecken Sie Eleganz durch modernes Design, Wohlbefinden und bewusstes Wachstum.",
-          exploreBtn: "Entdecken",
-          contactBtn: "Kontakt",
-          aboutCardTitle: "Über Zenoura",
-          aboutCardText: "Zenoura ist eine digitale Lifestyle-Plattform, die Luxus durch Balance, Wohlbefinden und Kreativität neu definiert. Wir verbinden elegantes Design, Achtsamkeit und digitale Innovation für ein ruhiges, bedeutungsvolles Leben."
-        }
-      };
+    function toggleMenu() {
+      navbar.classList.toggle("show");
+    }
 
-      // Toggle dropdown
-      langBtn.addEventListener('click', (e)=> {
-        e.stopPropagation();
-        langListToggle();
-      });
+    function toggleLangMenu() {
+      langOptions.style.display = langOptions.style.display === "block" ? "none" : "block";
+    }
 
-      function langListToggle(){ 
-        langDropdown.style.display = (langDropdown.style.display === 'block') ? 'none' : 'block';
-        langDropdown.setAttribute('aria-hidden', langDropdown.style.display === 'none');
+    function setLang(lang) {
+      currentLang = lang;
+      document.body.classList.add("fade");
+      setTimeout(() => document.body.classList.remove("fade"), 500);
+      langOptions.style.display = "none";
+      const btn = document.querySelector(".lang-select");
+      if (lang === "en") {
+        btn.innerHTML = "🇬🇧 EN";
+        content.innerHTML = `<h1>Welcome to Zenoura</h1><p>Experience balance, creativity, and innovation. Zenoura brings together design, technology, and tranquility to inspire your journey.</p>`;
+        document.body.dir = "ltr";
+      } else if (lang === "ar") {
+        btn.innerHTML = "🇸🇦 AR";
+        content.innerHTML = `<h1>مرحبًا بك في زينورا</h1><p>اختبر التوازن والإبداع والابتكار. تجمع Zenoura بين التصميم والتكنولوجيا والهدوء لإلهام رحلتك.</p>`;
+        document.body.dir = "rtl";
+      } else {
+        btn.innerHTML = "🇩🇪 DE";
+        content.innerHTML = `<h1>Willkommen bei Zenoura</h1><p>Erleben Sie Balance, Kreativität und Innovation. Zenoura vereint Design, Technologie und Ruhe, um Ihre Reise zu inspirieren.</p>`;
+        document.body.dir = "ltr";
       }
+    }
 
-      // Click outside to close language list
-      document.addEventListener('click', (e)=> {
-        if(!langWrapper.contains(e.target)){ langDropdown.style.display = 'none'; langDropdown.setAttribute('aria-hidden', 'true') }
-      });
-
-      // Language buttons
-      document.querySelectorAll('#langList button').forEach(btn => {
-        btn.addEventListener('click', ()=> {
-          const newLang = btn.getAttribute('data-lang');
-          setLanguage(newLang);
-          langDropdown.style.display = 'none';
-        });
-      });
-
-      function setLanguage(newLang){
-        if(newLang === currentLang) return;
-        currentLang = newLang;
-        langBtn.textContent = (newLang === 'en')? "🇬🇧 EN" : (newLang === 'ar')? "🇸🇦 AR" : "🇩🇪 DE";
-        // direction
-        document.documentElement.dir = (newLang === 'ar')? 'rtl' : 'ltr';
-
-        // fade effect on container texts
-        const targets = {
-          homeTitle: document.getElementById('homeTitle'),
-          homeLead: document.getElementById('homeLead'),
-          exploreBtn: document.getElementById('exploreBtn'),
-          contactBtn: document.getElementById('contactBtn'),
-          aboutCardTitle: document.getElementById('aboutCardTitle'),
-          aboutCardText: document.getElementById('aboutCardText')
-        };
-
-        // animate out
-        Object.values(targets).forEach(el=>{
-          el.classList.add('fade-exit');
-          setTimeout(()=> el.classList.add('fade-exit-active'), 10);
-        });
-
-        setTimeout(()=>{
-          // set new text
-          const txt = content[newLang];
-          targets.homeTitle.innerHTML = txt.homeTitle;
-          targets.homeLead.innerHTML = txt.homeLead;
-          targets.exploreBtn.innerHTML = txt.exploreBtn;
-          targets.contactBtn.innerHTML = txt.contactBtn;
-          targets.aboutCardTitle.innerHTML = txt.aboutCardTitle;
-          targets.aboutCardText.innerHTML = txt.aboutCardText;
-
-          // animate in
-          Object.values(targets).forEach(el=>{
-            el.classList.remove('fade-exit','fade-exit-active');
-            el.classList.add('fade-enter');
-            setTimeout(()=> el.classList.add('fade-enter-active'), 10);
-            setTimeout(()=> el.classList.remove('fade-enter','fade-enter-active'), 420);
-          });
-        }, 280);
-      }
-
-      // Hamburger mobile toggle
-      hamburger.addEventListener('click', ()=> {
-        if(mainNav.style.display === 'flex'){
-          mainNav.style.display = 'none';
-        } else {
-          mainNav.style.display = 'flex';
-          mainNav.style.flexDirection = 'column';
-          mainNav.style.position = 'absolute';
-          mainNav.style.top = '64px';
-          mainNav.style.right = '18px';
-          mainNav.style.background = 'rgba(10,6,12,0.95)';
-          mainNav.style.padding = '12px';
-          mainNav.style.borderRadius = '10px';
-          mainNav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-        }
-      });
-
-      // Initialize default language (en)
-      setLanguage('en');
-    })();
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".lang-menu")) langOptions.style.display = "none";
+    });
   </script>
 </body>
 </html>
