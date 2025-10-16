@@ -15,9 +15,8 @@
       --accent: #b95cff;
       --muted: #cfc7db;
     }
-    html {
-      scroll-behavior: smooth;
-    }
+
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
@@ -26,6 +25,8 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -36,30 +37,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 15px;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(185, 92, 255, 0.1);
       z-index: 1000;
     }
+
     .brand {
       color: var(--accent);
       font-weight: 800;
       letter-spacing: 3px;
+      font-size: 20px;
     }
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .menu a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .menu a:hover {
-      color: var(--accent);
-    }
+
+    /* LANGUAGE SELECT */
     .lang-select {
       background: transparent;
       border: 1px solid rgba(185, 92, 255, 0.3);
@@ -68,12 +59,66 @@
       padding: 5px 10px;
       font-weight: 600;
       cursor: pointer;
+      margin-right: auto;
+      margin-left: 10px;
     }
+
+    /* MENU BUTTON */
+    .menu-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 26px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .menu-btn:hover {
+      transform: scale(1.1);
+      color: var(--accent);
+    }
+
+    /* SIDEBAR MENU */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 240px;
+      height: 100%;
+      background: rgba(20, 4, 26, 0.95);
+      backdrop-filter: blur(10px);
+      border-left: 1px solid rgba(185, 92, 255, 0.2);
+      padding-top: 80px;
+      transition: right 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 999;
+    }
+
+    .side-menu.open {
+      right: 0;
+    }
+
+    .side-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+
+    .side-menu a:hover {
+      background: rgba(185, 92, 255, 0.2);
+      color: var(--accent);
+    }
+
     section {
       max-width: 900px;
       margin: 120px auto;
       padding: 0 20px;
     }
+
     h1 {
       color: var(--accent);
       margin-bottom: 10px;
@@ -81,13 +126,15 @@
     p {
       color: var(--muted);
     }
+
     footer {
       text-align: center;
       color: #888;
       padding: 30px 10px;
       border-top: 1px solid rgba(185, 92, 255, 0.1);
     }
-    /* Contact form */
+
+    /* CONTACT FORM */
     form {
       display: flex;
       flex-direction: column;
@@ -98,6 +145,7 @@
       box-shadow: 0 0 15px rgba(185, 92, 255, 0.1);
       margin-top: 20px;
     }
+
     input, textarea {
       background: #140117;
       border: 1px solid rgba(185, 92, 255, 0.3);
@@ -107,11 +155,13 @@
       font-size: 15px;
       resize: none;
     }
+
     input:focus, textarea:focus {
       outline: none;
       border-color: var(--accent);
       box-shadow: 0 0 8px rgba(185, 92, 255, 0.4);
     }
+
     button[type=submit] {
       background: var(--accent);
       color: #fff;
@@ -122,6 +172,7 @@
       cursor: pointer;
       transition: all .3s;
     }
+
     button[type=submit]:hover {
       background: #a14cff;
       transform: scale(1.03);
@@ -131,21 +182,23 @@
 <body>
 
   <header>
+    <select class="lang-select" id="langSelect">
+      <option value="en" selected>🇬🇧 English</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="de">🇩🇪 Deutsch</option>
+    </select>
     <div class="brand">ZENOURA</div>
-    <div class="menu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#policy">Policy</a>
-      <a href="#affiliate">Affiliate</a>
-      <a href="#contact">Contact</a>
-      <a href="contact.html">↗ Separate Page</a>
-      <select class="lang-select" id="langSelect">
-        <option value="en" selected>🇬🇧 English</option>
-        <option value="ar">🇸🇦 العربية</option>
-        <option value="de">🇩🇪 Deutsch</option>
-      </select>
-    </div>
+    <button class="menu-btn" id="menuBtn">☰</button>
   </header>
+
+  <nav class="side-menu" id="sideMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#policy">Policy</a>
+    <a href="#affiliate">Affiliate</a>
+    <a href="#contact">Contact</a>
+    <a href="contact.html">↗ Separate Page</a>
+  </nav>
 
   <section id="home">
     <h1 id="home-title">Welcome to Zenoura</h1>
@@ -191,9 +244,14 @@
   <footer>© 2025 Zenoura. All rights reserved.</footer>
 
   <script>
-    const langSelect=document.getElementById("langSelect");
+    // Sidebar toggle
+    const menuBtn=document.getElementById("menuBtn");
+    const sideMenu=document.getElementById("sideMenu");
+    menuBtn.addEventListener("click",()=>sideMenu.classList.toggle("open"));
 
-    const translations={
+    // Translations
+    const langSelect=document.getElementById("langSelect");
+    const t={
       en:{
         home:["Welcome to Zenoura","Discover balance, creativity, and conscious luxury through Zenoura’s curated experiences."],
         about:["About Zenoura","Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. We craft trusted affiliate recommendations and mindful experiences for modern living."],
@@ -218,18 +276,17 @@
     };
 
     langSelect.addEventListener("change",()=>{
-      const lang=langSelect.value;
-      const t=translations[lang];
-      document.getElementById("home-title").textContent=t.home[0];
-      document.getElementById("home-text").textContent=t.home[1];
-      document.getElementById("about-title").textContent=t.about[0];
-      document.getElementById("about-text").textContent=t.about[1];
-      document.getElementById("policy-title").textContent=t.policy[0];
-      document.getElementById("policy-text").textContent=t.policy[1];
-      document.getElementById("affiliate-title").textContent=t.affiliate[0];
-      document.getElementById("affiliate-text").textContent=t.affiliate[1];
-      document.getElementById("contact-title").textContent=t.contact[0];
-      document.getElementById("contact-desc").textContent=t.contact[1];
+      const lang=langSelect.value, tr=t[lang];
+      document.getElementById("home-title").textContent=tr.home[0];
+      document.getElementById("home-text").textContent=tr.home[1];
+      document.getElementById("about-title").textContent=tr.about[0];
+      document.getElementById("about-text").textContent=tr.about[1];
+      document.getElementById("policy-title").textContent=tr.policy[0];
+      document.getElementById("policy-text").textContent=tr.policy[1];
+      document.getElementById("affiliate-title").textContent=tr.affiliate[0];
+      document.getElementById("affiliate-text").textContent=tr.affiliate[1];
+      document.getElementById("contact-title").textContent=tr.contact[0];
+      document.getElementById("contact-desc").textContent=tr.contact[1];
       document.body.dir=(lang==="ar")?"rtl":"ltr";
     });
 
