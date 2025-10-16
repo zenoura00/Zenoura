@@ -1,288 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenoura | Affiliate</title>
-  <meta name="description" content="Affiliate disclosure page for Zenoura – transparency about commissions and promotional links.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Affiliate Disclosure | Zenoura</title>
+
+  <!-- Google Auto Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
+
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #0b0010, #1a0120);
-      color: #fff;
-      scroll-behavior: smooth;
+    :root{
+      --bg-1:#0e0111;
+      --bg-2:#1b0420;
+      --accent:#b95cff;
+      --muted:#cfc7db;
     }
-
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(10, 0, 20, 0.85);
-      backdrop-filter: blur(6px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      border-bottom: 1px solid rgba(185, 92, 255, 0.3);
-      z-index: 999;
+    body{
+      margin:0;
+      font-family:"Poppins",sans-serif;
+      background:linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      color:#fff;
+      line-height:1.6;
     }
-
-    .logo {
-      font-size: 26px;
-      color: #b95cff;
-      font-weight: 700;
-      letter-spacing: 3px;
+    header{
+      position:fixed;top:0;left:0;right:0;height:70px;
+      background:rgba(10,2,12,0.8);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 20px;
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(185,92,255,0.1);
+      z-index:1000;
     }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    .brand{color:var(--accent);font-weight:800;letter-spacing:3px;}
+    .menu a{
+      margin-left:20px;text-decoration:none;color:#fff;font-weight:600;
+      transition:color .2s;
     }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+    .menu a:hover{color:var(--accent);}
+    .container{max-width:900px;margin:120px auto 60px;padding:0 20px;}
+    h1{color:var(--accent);margin-bottom:10px;}
+    h2{color:var(--accent);margin-top:20px;margin-bottom:8px;}
+    p{color:var(--muted);}
+    footer{text-align:center;color:#888;padding:30px 10px;border-top:1px solid rgba(185,92,255,0.1);}
+    .lang-switch{margin-top:20px;}
+    .lang-switch button{
+      margin:0 5px;
+      background:transparent;
+      border:1px solid rgba(185,92,255,0.3);
+      color:#fff;
+      border-radius:10px;
+      padding:6px 10px;
+      cursor:pointer;
+      font-weight:600;
     }
-
-    nav a:hover {
-      color: #b95cff;
-    }
-
-    .lang-menu {
-      position: relative;
-    }
-
-    .lang-select {
-      background: none;
-      border: 1px solid #b95cff;
-      color: #b95cff;
-      padding: 6px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-    }
-
-    .lang-options {
-      display: none;
-      position: absolute;
-      top: 38px;
-      right: 0;
-      background: #120016;
-      border: 1px solid #b95cff;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .lang-options button {
-      background: none;
-      border: none;
-      color: #fff;
-      padding: 8px 12px;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .lang-options button:hover {
-      background: rgba(185, 92, 255, 0.2);
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #b95cff;
-      border-radius: 2px;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: rgba(15, 0, 20, 0.9);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        border-left: 1px solid #b95cff;
-        padding: 15px;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    main {
-      padding-top: 90px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h1 {
-      font-size: 42px;
-      color: #b95cff;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-    }
-
-    .section {
-      background-color: rgba(255,255,255,0.03);
-      border: 1px solid rgba(185,92,255,0.2);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-      text-align: left;
-      box-shadow: 0 0 15px rgba(185, 92, 255, 0.15);
-    }
-
-    .section h2 {
-      color: #b95cff;
-      font-size: 22px;
-    }
-
-    .section p {
-      line-height: 1.6;
-      font-size: 16px;
-      color: #ddd;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      color: #999;
-      border-top: 1px solid rgba(185, 92, 255, 0.3);
-      margin-top: 50px;
-    }
-
-    .fade {
-      animation: fade 0.5s ease-in-out;
-    }
-
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .lang-switch button.active{
+      background:rgba(185,92,255,0.1);
+      color:var(--accent);
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">ZENOURA</div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-    <nav id="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="policy.html">Policy</a>
-      <a href="affiliate.html">Affiliate</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="lang-menu">
-      <button class="lang-select" onclick="toggleLangMenu()">🇬🇧 EN</button>
-      <div class="lang-options" id="langOptions">
-        <button onclick="setLang('en')">🇬🇧 EN</button>
-        <button onclick="setLang('ar')">🇸🇦 AR</button>
-        <button onclick="setLang('de')">🇩🇪 DE</button>
-      </div>
+    <div class="brand">ZENOURA</div>
+    <div class="menu">
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">💎 About</a>
+      <a href="policy.html">📜 Policy</a>
+      <a href="contact.html">✉️ Contact</a>
     </div>
   </header>
 
-  <!-- Google Ad Top -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
-  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-2696059232288635" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <main class="container" id="content">
+    <h1 id="title">Affiliate Disclosure</h1>
 
-  <main id="content" class="fade">
-    <h1>Affiliate Disclosure</h1>
-
-    <div class="section">
-      <h2>Transparency Statement</h2>
-      <p>Some links on Zenoura are affiliate links. When you click on them and make a purchase, we may earn a small commission at no additional cost to you. This helps support our work and keep our content free.</p>
+    <div id="text">
+      <p>Some of the links on Zenoura are affiliate links. This means that if you click on the link and make a purchase, we may receive a small commission at no additional cost to you.</p>
+      <h2>Our Commitment</h2>
+      <p>We only recommend products or services that we believe will add value to our visitors. Your trust is important to us, and we never promote items just for profit.</p>
+      <h2>Transparency</h2>
+      <p>Transparency is a core value at Zenoura. We disclose affiliate relationships so you can make informed decisions when using our links.</p>
+      <h2>How It Helps</h2>
+      <p>Affiliate earnings help us maintain the site, provide free content, and continue developing valuable tools for our users.</p>
+      <h2>Questions</h2>
+      <p>If you have any questions about our affiliate links, contact us at <strong>support@zen-oura.com</strong>.</p>
     </div>
 
-    <div class="section">
-      <h2>Our Commitment</h2>
-      <p>We only promote products or services that we genuinely believe provide value to our readers. Our recommendations are based on personal experience and research.</p>
+    <div class="lang-switch">
+      <button data-lang="en" class="active">🇬🇧 EN</button>
+      <button data-lang="ar">🇸🇦 AR</button>
+      <button data-lang="de">🇩🇪 DE</button>
     </div>
   </main>
-
-  <!-- Google Ad Bottom -->
-  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-client="ca-pub-2696059232288635" data-ad-slot="8888888888" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <footer>© 2025 Zenoura. All rights reserved.</footer>
 
   <script>
-    const navbar = document.getElementById("navbar");
-    const langOptions = document.getElementById("langOptions");
-    const content = document.getElementById("content");
-    let currentLang = "en";
+    const title=document.getElementById("title");
+    const text=document.getElementById("text");
+    const btns=document.querySelectorAll(".lang-switch button");
 
-    function toggleMenu() {
-      navbar.classList.toggle("show");
-    }
-
-    function toggleLangMenu() {
-      langOptions.style.display = langOptions.style.display === "block" ? "none" : "block";
-    }
-
-    function setLang(lang) {
-      currentLang = lang;
-      content.classList.add("fade");
-      setTimeout(() => content.classList.remove("fade"), 500);
-      langOptions.style.display = "none";
-      const btn = document.querySelector(".lang-select");
-
-      if (lang === "en") {
-        btn.innerHTML = "🇬🇧 EN";
-        content.innerHTML = `
-          <h1>Affiliate Disclosure</h1>
-          <div class="section"><h2>Transparency Statement</h2><p>Some links on Zenoura are affiliate links. When you click on them and make a purchase, we may earn a small commission at no additional cost to you. This helps support our work and keep our content free.</p></div>
-          <div class="section"><h2>Our Commitment</h2><p>We only promote products or services that we genuinely believe provide value to our readers. Our recommendations are based on personal experience and research.</p></div>
-        `;
-        document.body.dir = "ltr";
-      } else if (lang === "ar") {
-        btn.innerHTML = "🇸🇦 AR";
-        content.innerHTML = `
-          <h1>إفصاح التسويق بالعمولة</h1>
-          <div class="section"><h2>بيان الشفافية</h2><p>بعض الروابط في موقع زينورا هي روابط تسويقية بالعمولة. عند النقر عليها وإجراء عملية شراء، قد نحصل على عمولة صغيرة دون أي تكلفة إضافية عليك. هذا يساعدنا على دعم المحتوى المجاني.</p></div>
-          <div class="section"><h2>التزامنا</h2><p>نحن نروج فقط للمنتجات أو الخدمات التي نؤمن بأنها تقدم قيمة حقيقية لقرائنا. جميع توصياتنا مبنية على خبرة وبحث شخصي.</p></div>
-        `;
-        document.body.dir = "rtl";
-      } else {
-        btn.innerHTML = "🇩🇪 DE";
-        content.innerHTML = `
-          <h1>Affiliate-Offenlegung</h1>
-          <div class="section"><h2>Transparenz-Erklärung</h2><p>Einige Links auf Zenoura sind Affiliate-Links. Wenn Sie auf diese klicken und einen Kauf tätigen, erhalten wir möglicherweise eine kleine Provision ohne zusätzliche Kosten für Sie. Dies unterstützt unsere Arbeit.</p></div>
-          <div class="section"><h2>Unser Engagement</h2><p>Wir bewerben nur Produkte oder Dienstleistungen, die wir wirklich als wertvoll ansehen. Unsere Empfehlungen basieren auf Erfahrung und sorgfältiger Recherche.</p></div>
-        `;
-        document.body.dir = "ltr";
+    const translations={
+      en:{
+        title:"Affiliate Disclosure",
+        text:`
+          <p>Some of the links on Zenoura are affiliate links. This means that if you click on the link and make a purchase, we may receive a small commission at no additional cost to you.</p>
+          <h2>Our Commitment</h2>
+          <p>We only recommend products or services that we believe will add value to our visitors. Your trust is important to us, and we never promote items just for profit.</p>
+          <h2>Transparency</h2>
+          <p>Transparency is a core value at Zenoura. We disclose affiliate relationships so you can make informed decisions when using our links.</p>
+          <h2>How It Helps</h2>
+          <p>Affiliate earnings help us maintain the site, provide free content, and continue developing valuable tools for our users.</p>
+          <h2>Questions</h2>
+          <p>If you have any questions about our affiliate links, contact us at <strong>support@zen-oura.com</strong>.</p>
+        `
+      },
+      ar:{
+        title:"إفصاح التسويق بالعمولة",
+        text:`
+          <p>بعض الروابط على موقع زينورا هي روابط تسويق بالعمولة، أي أنه إذا قمت بالنقر عليها وشراء منتج، فقد نحصل على عمولة صغيرة دون أي تكلفة إضافية عليك.</p>
+          <h2>التزامنا</h2>
+          <p>نوصي فقط بالمنتجات أو الخدمات التي نؤمن بأنها تضيف قيمة لزوارنا. ثقتك مهمة بالنسبة لنا، ولن نروج لأي شيء لأجل الربح فقط.</p>
+          <h2>الشفافية</h2>
+          <p>الشفافية هي من قيم زينورا الأساسية. نوضح علاقاتنا التسويقية حتى تكون قراراتك مبنية على معرفة.</p>
+          <h2>الفائدة</h2>
+          <p>تساعدنا أرباح العمولة على الحفاظ على الموقع وتقديم محتوى مجاني وتطوير أدوات مفيدة للمستخدمين.</p>
+          <h2>الأسئلة</h2>
+          <p>لأي استفسارات حول روابط التسويق بالعمولة، راسلنا على البريد <strong>support@zen-oura.com</strong>.</p>
+        `
+      },
+      de:{
+        title:"Affiliate-Offenlegung",
+        text:`
+          <p>Einige der Links auf Zenoura sind Affiliate-Links. Wenn Sie auf einen Link klicken und einen Kauf tätigen, erhalten wir möglicherweise eine kleine Provision, ohne dass Ihnen zusätzliche Kosten entstehen.</p>
+          <h2>Unser Engagement</h2>
+          <p>Wir empfehlen nur Produkte oder Dienstleistungen, von denen wir glauben, dass sie unseren Besuchern einen Mehrwert bieten. Ihr Vertrauen ist uns wichtig.</p>
+          <h2>Transparenz</h2>
+          <p>Transparenz ist ein zentraler Wert bei Zenoura. Wir legen Affiliate-Beziehungen offen, damit Sie fundierte Entscheidungen treffen können.</p>
+          <h2>Wie es hilft</h2>
+          <p>Affiliate-Einnahmen helfen uns, die Website zu betreiben, kostenlosen Inhalt bereitzustellen und nützliche Tools weiterzuentwickeln.</p>
+          <h2>Fragen</h2>
+          <p>Wenn Sie Fragen zu unseren Affiliate-Links haben, kontaktieren Sie uns unter <strong>support@zen-oura.com</strong>.</p>
+        `
       }
-    }
+    };
 
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".lang-menu")) langOptions.style.display = "none";
+    btns.forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        btns.forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+        const lang=btn.dataset.lang;
+        const t=translations[lang];
+        title.textContent=t.title;
+        text.innerHTML=t.text;
+        document.body.dir=(lang==="ar")?"rtl":"ltr";
+      });
     });
   </script>
 </body>
