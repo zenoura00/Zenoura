@@ -1,304 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenoura</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zenoura | Home</title>
+  <meta name="description" content="Zenoura — curated luxury, wellness and mindful digital living." />
+  <meta name="keywords" content="Zenoura, luxury, wellness, affiliate, mindful living, lifestyle" />
+  <meta name="author" content="Zenoura" />
 
-  <!-- Google Auto Ads -->
+  <!-- Google AdSense Auto Ads (your account) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Poppins", sans-serif;
-      background: radial-gradient(circle at top, #1a0723, #0e0111);
-      color: #fff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
+    :root{
+      --bg-1:#0e0111;
+      --bg-2:#1b0420;
+      --accent:#b95cff;
+      --muted:#cfc7db;
+      --card:rgba(255,255,255,0.03);
     }
-    a { text-decoration: none; color: inherit; }
-    section {
-  padding: 40px 8%;
-  min-height: auto;
-  scroll-margin-top: 80px; /* لضبط التمرير عند النقر من القائمة */
-}
-
-    /* HEADER */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 8%;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(20, 0, 30, 0.7);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(185, 92, 255, 0.3);
-      z-index: 1000;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #b95cff;
-      letter-spacing: 3px;
-    }
-    .menu-btn {
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #b95cff;
-      border: 1px solid #b95cff;
-      padding: 6px 10px;
-      border-radius: 8px;
-      background: transparent;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      background: radial-gradient(circle at 10% 10%, rgba(185,92,255,0.03), transparent), linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
     }
 
-    /* SIDEBAR MENU */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      right: -300px;
-      height: 100%;
-      width: 260px;
-      background: rgba(30, 0, 45, 0.95);
-      box-shadow: -4px 0 15px rgba(185, 92, 255, 0.2);
-      transition: 0.4s;
-      z-index: 9999;
-      padding: 30px 20px;
+    /* header */
+    header{
+      position:fixed; top:0; left:0; right:0;
+      height:72px;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 20px;
+      background: linear-gradient(180deg, rgba(10,2,12,0.78), rgba(10,2,12,0.45));
+      border-bottom:1px solid rgba(185,92,255,0.08);
+      backdrop-filter: blur(8px);
+      z-index:1100;
     }
-    .sidebar.active { right: 0; }
-    .sidebar ul { list-style: none; margin-top: 40px; }
-    .sidebar ul li { margin-bottom: 20px; }
-    .sidebar ul li a {
-      color: #fff;
-      font-size: 1.1rem;
-      transition: 0.3s;
-    }
-    .sidebar ul li a:hover { color: #b95cff; }
-    .lang-select {
-      margin-top: 40px;
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #b95cff;
-      border-radius: 10px;
-      background: transparent;
-      color: #b95cff;
-      cursor: pointer;
-    }
-    .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 1.5rem;
-      color: #b95cff;
-      cursor: pointer;
+    .brand{color:var(--accent);font-weight:800;letter-spacing:4px;font-size:18px}
+    .open-menu-btn{
+      background:transparent;border:1px solid rgba(185,92,255,0.18);color:var(--accent);
+      padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700;
     }
 
-    /* SECTIONS */
-    section h1 {
-      color: #b95cff;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    /* sidebar (drawer) */
+    .drawer{
+      position:fixed; top:0; right:-320px; width:320px; height:100vh;
+      background: linear-gradient(180deg, rgba(22,6,30,0.98), rgba(12,2,18,0.98));
+      padding:28px; box-shadow:-20px 0 60px rgba(0,0,0,0.6); transition: right 320ms ease;
+      z-index:1200; display:flex; flex-direction:column;
     }
-    section p {
-      color: #ccc;
-      line-height: 1.7;
-      max-width: 700px;
-      margin-bottom: 20px;
+    .drawer.open{ right:0 }
+    .drawer .close-btn{ align-self:flex-end; background:none;border:none;color:var(--accent);font-size:20px; cursor:pointer; }
+    .drawer nav{ display:flex; flex-direction:column; gap:12px; margin-top:18px; }
+    .drawer nav a{ color:#fff; text-decoration:none; font-weight:600; padding:10px 8px; border-radius:8px; transition: background 180ms }
+    .drawer nav a:hover{ background: rgba(185,92,255,0.06); color:var(--accent) }
+
+    .drawer .lang-row{ margin-top:auto; display:flex; gap:8px; justify-content:center; align-items:center }
+    .lang-btn{
+      padding:8px 12px; border-radius:10px; background:transparent; border:1px solid rgba(185,92,255,0.12);
+      color:#fff; cursor:pointer; font-weight:700;
+    }
+    .lang-btn.active{ background: rgba(185,92,255,0.12); color:var(--accent); border-color: rgba(185,92,255,0.3) }
+
+    /* main container */
+    .container{ max-width:1100px; margin:110px auto 80px; padding:0 20px; }
+
+    /* section cards */
+    section.block{
+      margin:26px 0; padding:24px; border-radius:12px; background:var(--card);
+      border:1px solid rgba(185,92,255,0.04); box-shadow:0 6px 30px rgba(10,2,20,0.6);
+      transition: transform 240ms ease, box-shadow 240ms ease;
+    }
+    section h2{ color:var(--accent); margin:0 0 8px; font-size:20px }
+    section p{ color:var(--muted); margin:0 0 10px }
+
+    /* hero */
+    .hero{ display:flex; flex-direction:column; gap:12px; padding:30px; background: linear-gradient(180deg, rgba(185,92,255,0.03), rgba(185,92,255,0.01)); border-radius:12px }
+    .hero h1{ color:var(--accent); font-size:40px; margin:0; letter-spacing:3px }
+    .hero p{ max-width:760px; font-size:18px }
+
+    /* CTA buttons */
+    .cta-row{ margin-top:12px; display:flex; gap:12px; flex-wrap:wrap }
+    .btn{
+      padding:10px 18px; border-radius:999px; border:none; cursor:pointer; font-weight:800;
+      background: linear-gradient(90deg,var(--accent), #7b2fff); color:#fff;
+    }
+    .btn.ghost{ background:transparent; border:1px solid rgba(185,92,255,0.12) }
+
+    /* contact form inline in main page (demo) */
+    .contact-form{ display:flex; flex-direction:column; gap:10px; max-width:640px }
+    .contact-form input, .contact-form textarea{
+      padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02); color:#fff;
+      font-size:15px; outline:none;
+    }
+    .contact-form textarea{ min-height:140px; resize:vertical }
+
+    footer{ text-align:center; padding:26px 12px; color:#9b93a6; border-top:1px solid rgba(185,92,255,0.03); margin-top:40px }
+
+    /* small screens */
+    @media (max-width:900px){
+      .drawer{ width:86% }
+      .hero h1{ font-size:32px }
+    }
+    @media (max-width:520px){
+      .hero h1{ font-size:26px }
+      header{ height:72px; padding:10px 16px }
+      .open-menu-btn{ padding:8px 10px }
     }
 
-    /* CONTACT FORM */
-    form {
-      max-width: 500px;
-      margin-top: 20px;
-      background: rgba(255,255,255,0.05);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(185,92,255,0.1);
-    }
-    form input, form textarea, form button {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 12px;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-    }
-    form input, form textarea {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-    }
-    form textarea { height: 120px; resize: none; }
-    form button {
-      background: linear-gradient(45deg,#b95cff,#7b2fff);
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    form button:hover { opacity: 0.9; box-shadow: 0 0 10px rgba(185,92,255,0.4); }
-
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      color: #aaa;
-      border-top: 1px solid rgba(185,92,255,0.3);
-    }
+    /* fade */
+    .fade { animation: fadeIn 360ms ease both }
+    @keyframes fadeIn{ from{ opacity:0; transform: translateY(6px)} to{ opacity:1; transform:none } }
   </style>
 </head>
-<body>
+<body dir="ltr">
 
   <!-- HEADER -->
   <header>
-    <div class="logo">ZENOURA</div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="brand">ZENOURA</div>
+    <button class="open-menu-btn" id="openMenuBtn" aria-label="Open menu">☰ Menu</button>
   </header>
 
-  <!-- SIDEBAR MENU -->
-  <div class="sidebar" id="sidebar">
-    <div class="close-btn" onclick="toggleMenu()">✕</div>
-    <ul>
-      <li><a href="#home" onclick="toggleMenu()">🏠 Home</a></li>
-      <li><a href="#about" onclick="toggleMenu()">💎 About</a></li>
-      <li><a href="#policy" onclick="toggleMenu()">📜 Policy</a></li>
-      <li><a href="#affiliate" onclick="toggleMenu()">💰 Affiliate</a></li>
-      <li><a href="#contact" onclick="toggleMenu()">✉️ Contact</a></li>
-    </ul>
-    <select class="lang-select" id="langSwitcher" onchange="switchLang()">
-      <option value="en">🇬🇧 English</option>
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="de">🇩🇪 Deutsch</option>
-    </select>
-  </div>
+  <!-- DRAWER / SIDEBAR (right) -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <button class="close-btn" id="closeDrawer" aria-label="Close menu">✕</button>
 
-  <!-- HOME -->
-  <section id="home">
-    <h1 id="home-title">Welcome to Zenoura</h1>
-    <p id="home-text">
-      Explore the world of creativity, innovation, and smart digital solutions with Zenoura. We’re here to inspire and connect.
-    </p>
-  </section>
+    <nav aria-label="Main">
+      <!-- Home stays in-page -->
+      <a href="#home" id="nav-home">🏠 Home</a>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h1 id="about-title">About Us</h1>
-    <p id="about-text">
-      Zenoura is dedicated to providing insightful content, creative marketing, and inspiring ideas to help you grow and succeed in the digital era.
-    </p>
-  </section>
+      <!-- Other pages open separate files -->
+      <a href="about.html" id="nav-about">💎 About</a>
+      <a href="policy.html" id="nav-policy">📜 Policy</a>
+      <a href="affiliate.html" id="nav-affiliate">💼 Affiliate</a>
+      <a href="contact.html" id="nav-contact">✉️ Contact</a>
+    </nav>
 
-  <!-- POLICY -->
-  <section id="policy">
-    <h1 id="policy-title">Privacy Policy</h1>
-    <p id="policy-text">
-      At Zenoura, we value your privacy and collect only minimal information such as cookies to enhance your browsing experience.
-    </p>
-  </section>
+    <div style="flex:1"></div>
 
-  <!-- AFFILIATE -->
-  <section id="affiliate">
-    <h1 id="affiliate-title">Affiliate Disclosure</h1>
-    <p id="affiliate-text">
-      Some links on Zenoura may be affiliate links. If you click and make a purchase, we may earn a small commission at no additional cost to you.
-    </p>
-  </section>
+    <div style="font-weight:700;color:#cfc7db;margin-bottom:10px">Language</div>
+    <div class="lang-row">
+      <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
+      <button class="lang-btn" data-lang="ar">🇸🇦 AR</button>
+      <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
+    </div>
+  </aside>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h1 id="contact-title">Contact Us</h1>
-    <p id="contact-text">
-      We'd love to hear from you! Fill out the form below and we'll get back to you soon.
-    </p>
-    <form onsubmit="event.preventDefault(); alert(currentLang==='ar'?'تم إرسال النموذج (شكلي فقط)':'Form submitted (demo only)');">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="Your Message"></textarea>
-      <button type="submit" id="send-btn">Send Message</button>
-    </form>
-  </section>
+  <!-- PAGE (one-page content) -->
+  <main class="container" id="mainContent">
 
+    <!-- TOP placeholder for Auto Ads (AdSense Auto Ads will place ads automatically) -->
+    <div style="text-align:center;margin-bottom:16px;color:#9b93a6;font-size:13px">
+      <!-- Auto Ads placeholder -->
+    </div>
+
+    <!-- HOME / HERO -->
+    <section id="home" class="block hero fade" tabindex="-1" aria-labelledby="home-title">
+      <h1 id="home-title">Zenoura</h1>
+      <p id="home-lead">Digital luxury & mindful living — curated recommendations, honest reviews and calm-driven design to elevate your everyday.</p>
+      <div class="cta-row">
+        <a class="btn" href="#about" onclick="scrollToSection(event,'about')">Explore</a>
+        <a class="btn ghost" href="contact.html">Contact</a>
+      </div>
+    </section>
+
+    <!-- ABOUT (summary in main page) -->
+    <section id="about-summary" class="block fade" tabindex="-1" aria-labelledby="about-title">
+      <h2 id="about-title">About Zenoura</h2>
+      <p id="about-p">Zenoura is a digital lifestyle platform redefining luxury through balance, wellness and creativity. We create curated content and trusted affiliate recommendations for mindful living.</p>
+      <p style="margin-top:10px;color:var(--muted);font-size:14px">Want to read more? <a href="about.html" style="color:var(--accent);text-decoration:underline;">Open the full About page</a></p>
+    </section>
+
+    <!-- POLICY (summary in main page) -->
+    <section id="policy-summary" class="block fade" tabindex="-1" aria-labelledby="policy-title">
+      <h2 id="policy-title">Privacy & Policies</h2>
+      <p id="policy-p">We collect minimal data (cookies, analytics) to improve experience. We may use affiliate links — check dedicated policy page for details.</p>
+      <p style="margin-top:10px;color:var(--muted);font-size:14px">Full policy at <a href="policy.html" style="color:var(--accent);text-decoration:underline;">policy page</a></p>
+    </section>
+
+    <!-- AFFILIATE (summary in main page) -->
+    <section id="affiliate-summary" class="block fade" tabindex="-1" aria-labelledby="affiliate-title">
+      <h2 id="affiliate-title">Affiliate Disclosure</h2>
+      <p id="affiliate-p">Some links on this site are affiliate links. When you purchase via those links, Zenoura may earn a small commission at no extra cost to you.</p>
+      <p style="margin-top:10px;color:var(--muted);font-size:14px">More at <a href="affiliate.html" style="color:var(--accent);text-decoration:underline;">Affiliate page</a></p>
+    </section>
+
+    <!-- CONTACT (mini form summary here, but full contact page separate) -->
+    <section id="contact-summary" class="block fade" tabindex="-1" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p id="contact-p">Have a question or collaboration idea? Use the Contact page for the full form or send an email to <strong>support@zen-oura.com</strong>.</p>
+      <p style="margin-top:10px;color:var(--muted);font-size:14px">Open the contact page: <a href="contact.html" style="color:var(--accent);text-decoration:underline;">Contact</a></p>
+    </section>
+
+    <div style="height:18px"></div>
+
+    <!-- Bottom placeholder for Auto Ads -->
+    <div style="text-align:center;margin-top:8px;color:#9b93a6;font-size:13px">
+      <!-- Auto Ads / footer ad placeholder -->
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer>© 2025 Zenoura. All rights reserved.</footer>
 
+  <!-- SCRIPTS -->
   <script>
-    const sidebar = document.getElementById("sidebar");
-    function toggleMenu() {
-      sidebar.classList.toggle("active");
-    }
+    // helper
+    const drawer = document.getElementById('drawer');
+    const openBtn = document.getElementById('openMenuBtn');
+    const closeBtn = document.getElementById('closeDrawer');
+    const langBtns = Array.from(document.querySelectorAll('.lang-btn'));
+    const navHome = document.getElementById('nav-home');
 
-    let currentLang = "en";
-    const textMap = {
-      en: {
-        homeTitle: "Welcome to Zenoura",
-        homeText: "Explore the world of creativity, innovation, and smart digital solutions with Zenoura. We’re here to inspire and connect.",
-        aboutTitle: "About Us",
-        aboutText: "Zenoura is dedicated to providing insightful content, creative marketing, and inspiring ideas to help you grow and succeed in the digital era.",
-        policyTitle: "Privacy Policy",
-        policyText: "At Zenoura, we value your privacy and collect only minimal information such as cookies to enhance your browsing experience.",
-        affiliateTitle: "Affiliate Disclosure",
-        affiliateText: "Some links on Zenoura may be affiliate links. If you click and make a purchase, we may earn a small commission at no additional cost to you.",
-        contactTitle: "Contact Us",
-        contactText: "We'd love to hear from you! Fill out the form below and we'll get back to you soon.",
-        name: "Your Name",
-        email: "Your Email",
-        message: "Your Message",
-        send: "Send Message"
+    function openDrawer(){ drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function closeDrawer(){ drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+
+    openBtn.addEventListener('click', ()=> openDrawer());
+    closeBtn.addEventListener('click', ()=> closeDrawer());
+
+    // close drawer when clicking a link that opens other page (let browser navigate)
+    document.querySelectorAll('.drawer a').forEach(a=> a.addEventListener('click', ()=> closeDrawer()));
+
+    // but for our in-page "Home" link we intercept to scroll and close drawer
+    navHome.addEventListener('click', (e)=>{
+      // allow default anchor behavior (scroll) but also close drawer
+      setTimeout(()=> closeDrawer(), 150);
+    });
+
+    // ensure clicking outside drawer closes it
+    document.addEventListener('click', (ev)=>{
+      if(drawer.classList.contains('open')){
+        const inside = ev.target.closest('.drawer') || ev.target.closest('#openMenuBtn');
+        if(!inside) closeDrawer();
+      }
+    });
+
+    // language switching (updates text in-page)
+    let currentLang = 'en';
+    const translations = {
+      en:{
+        homeTitle:'Zenoura',
+        homeLead:'Digital luxury & mindful living — curated recommendations, honest reviews and calm-driven design to elevate your everyday.',
+        aboutTitle:'About Zenoura',
+        aboutP:'Zenoura is a digital lifestyle platform redefining luxury through balance, wellness and creativity. We create curated content and trusted affiliate recommendations for mindful living.',
+        policyTitle:'Privacy & Policies',
+        policyP:'We collect minimal data (cookies, analytics) to improve experience. We may use affiliate links — check dedicated policy page for details.',
+        affiliateTitle:'Affiliate Disclosure',
+        affiliateP:'Some links on this site are affiliate links. When you purchase via those links, Zenoura may earn a small commission at no extra cost to you.',
+        contactTitle:'Contact',
+        contactP:"Have a question or collaboration idea? Use the Contact page for the full form or email us at support@zen-oura.com."
       },
-      ar: {
-        homeTitle: "مرحبًا بك في زينورا",
-        homeText: "اكتشف عالم الإبداع والابتكار والحلول الرقمية الذكية مع زينورا. نحن هنا لنلهمك ونربطك بالعالم.",
-        aboutTitle: "من نحن",
-        aboutText: "زينورا مكرسة لتقديم محتوى مميز وأفكار تسويقية وإبداعية تساعدك على التطور والنجاح في العصر الرقمي.",
-        policyTitle: "سياسة الخصوصية",
-        policyText: "في زينورا، نقدر خصوصيتك ونجمع فقط الحد الأدنى من المعلومات مثل ملفات تعريف الارتباط لتحسين تجربتك.",
-        affiliateTitle: "إفصاح الشراكة التسويقية",
-        affiliateText: "قد تحتوي بعض الروابط في زينورا على روابط تسويق بالعمولة. عند النقر عليها والشراء، قد نحصل على عمولة صغيرة دون أي تكلفة إضافية عليك.",
-        contactTitle: "تواصل معنا",
-        contactText: "يسعدنا سماع رأيك! املأ النموذج أدناه وسنعاود الاتصال بك قريبًا.",
-        name: "اسمك",
-        email: "بريدك الإلكتروني",
-        message: "رسالتك",
-        send: "إرسال الرسالة"
+      ar:{
+        homeTitle:'زينورا',
+        homeLead:'الرفاهية الرقمية والعيش الواعي — توصيات مختارة، مراجعات صادقة وتصميم يركز على الهدوء لرفع جودة يومك.',
+        aboutTitle:'عن زينورا',
+        aboutP:'زينورا هي منصة أسلوب حياة رقمية تعيد تعريف الفخامة من خلال التوازن والرفاهية والإبداع. نقدم محتوى منتقى وتوصيات شريكة موثوقة للحياة الواعية.',
+        policyTitle:'السياسات والشروط',
+        policyP:'نجمع الحد الأدنى من البيانات (كوكيز، تحليلات) لتحسين التجربة. قد نستخدم روابط شراكة — راجع صفحة السياسة للمزيد.',
+        affiliateTitle:'إفصاح الشراكات',
+        affiliateP:'بعض الروابط في هذا الموقع روابط شراكة. عند الشراء عبرها قد نحصل على عمولة صغيرة دون أي تكلفة إضافية عليك.',
+        contactTitle:'تواصل معنا',
+        contactP:'هل لديك سؤال أو فكرة تعاون؟ استخدم صفحة التواصل للنموذج الكامل أو راسلنا على support@zen-oura.com.'
       },
-      de: {
-        homeTitle: "Willkommen bei Zenoura",
-        homeText: "Entdecken Sie die Welt der Kreativität, Innovation und intelligenten digitalen Lösungen mit Zenoura. Wir sind hier, um zu inspirieren und zu verbinden.",
-        aboutTitle: "Über uns",
-        aboutText: "Zenoura bietet inspirierende Inhalte, kreative Marketingideen und Strategien, die Ihnen helfen, im digitalen Zeitalter zu wachsen.",
-        policyTitle: "Datenschutzrichtlinie",
-        policyText: "Bei Zenoura schätzen wir Ihre Privatsphäre und sammeln nur minimale Informationen wie Cookies, um Ihre Erfahrung zu verbessern.",
-        affiliateTitle: "Affiliate-Hinweis",
-        affiliateText: "Einige Links auf Zenoura sind Affiliate-Links. Wenn Sie darauf klicken und etwas kaufen, erhalten wir möglicherweise eine kleine Provision, ohne dass Ihnen zusätzliche Kosten entstehen.",
-        contactTitle: "Kontaktieren Sie uns",
-        contactText: "Wir würden uns freuen, von Ihnen zu hören! Füllen Sie das Formular unten aus, und wir melden uns bald bei Ihnen.",
-        name: "Ihr Name",
-        email: "Ihre E-Mail",
-        message: "Ihre Nachricht",
-        send: "Nachricht senden"
+      de:{
+        homeTitle:'Zenoura',
+        homeLead:'Digitale Luxus & achtsames Leben — kuratierte Empfehlungen, ehrliche Bewertungen und ruhiges Design für den Alltag.',
+        aboutTitle:'Über Zenoura',
+        aboutP:'Zenoura ist eine digitale Lifestyle-Plattform, die Luxus durch Balance, Wellness und Kreativität neu definiert. Wir erstellen kuratierte Inhalte und vertrauenswürdige Affiliate-Empfehlungen für bewusstes Leben.',
+        policyTitle:'Richtlinien & Nutzungsbedingungen',
+        policyP:'Wir erfassen minimale Daten (Cookies, Analytics) zur Verbesserung der Erfahrung. Wir können Affiliate-Links nutzen — Details auf der Policy-Seite.',
+        affiliateTitle:'Affiliate-Hinweis',
+        affiliateP:'Einige Links auf dieser Website sind Affiliate-Links. Wenn Sie darüber kaufen, erhält Zenoura möglicherweise eine kleine Provision ohne zusätzliche Kosten für Sie.',
+        contactTitle:'Kontakt',
+        contactP:'Haben Sie eine Frage oder Kooperationsidee? Verwenden Sie die Kontaktseite für das vollständige Formular oder schreiben Sie an support@zen-oura.com.'
       }
     };
 
-    function switchLang() {
-      currentLang = document.getElementById("langSwitcher").value;
-      const t = textMap[currentLang];
-      document.body.style.direction = currentLang === "ar" ? "rtl" : "ltr";
+    function updateText(lang){
+      currentLang = lang;
+      // toggle active state on language buttons
+      langBtns.forEach(b=> b.classList.toggle('active', b.dataset.lang === lang));
+      // direction: RTL for Arabic
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
-      document.getElementById("home-title").textContent = t.homeTitle;
-      document.getElementById("home-text").textContent = t.homeText;
-      document.getElementById("about-title").textContent = t.aboutTitle;
-      document.getElementById("about-text").textContent = t.aboutText;
-      document.getElementById("policy-title").textContent = t.policyTitle;
-      document.getElementById("policy-text").textContent = t.policyText;
-      document.getElementById("affiliate-title").textContent = t.affiliateTitle;
-      document.getElementById("affiliate-text").textContent = t.affiliateText;
-      document.getElementById("contact-title").textContent = t.contactTitle;
-      document.getElementById("contact-text").textContent = t.contactText;
-      document.getElementById("name").placeholder = t.name;
-      document.getElementById("email").placeholder = t.email;
-      document.getElementById("message").placeholder = t.message;
-      document.getElementById("send-btn").textContent = t.send;
+      const t = translations[lang];
+      document.getElementById('home-title').textContent = t.homeTitle;
+      document.getElementById('home-lead').textContent = t.homeLead;
+      document.getElementById('about-title').textContent = t.aboutTitle;
+      document.getElementById('about-p').textContent = t.aboutP;
+      document.getElementById('policy-title').textContent = t.policyTitle;
+      document.getElementById('policy-p').textContent = t.policyP;
+      document.getElementById('affiliate-title').textContent = t.affiliateTitle;
+      document.getElementById('affiliate-p').textContent = t.affiliateP;
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      document.getElementById('contact-p').textContent = t.contactP;
     }
+
+    // wire lang buttons
+    langBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const code = btn.dataset.lang;
+        updateText(code);
+      });
+    });
+
+    // set default language
+    updateText('en');
+
+    // utility: scroll to section (used by some links)
+    function scrollToSection(e, id){
+      e && e.preventDefault();
+      const el = document.getElementById(id);
+      if(!el) return;
+      closeDrawer();
+      setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'start'}), 160);
+      setTimeout(()=> el.focus({preventScroll:true}), 600);
+    }
+
+    // accessibility: close drawer on Escape
+    document.addEventListener('keydown', (ev)=>{
+      if(ev.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+
+    // ensure clicks outside close drawer
+    document.addEventListener('click', (ev)=>{
+      if(drawer.classList.contains('open')){
+        const inside = ev.target.closest('.drawer') || ev.target.closest('#openMenuBtn');
+        if(!inside) closeDrawer();
+      }
+    });
+
   </script>
 </body>
 </html>
