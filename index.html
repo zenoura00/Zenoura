@@ -5,167 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zenoura Policies</title>
 
-  <!-- Google AdSense -->
-  <script async 
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" 
-    crossorigin="anonymous"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 
   <style>
-    :root {
-      --bg: #0e0111;
-      --panel: #141017;
-      --accent: #9b5cff;
-      --accent-2: #f672db;
-      --muted: #bfb7c9;
-      --glass: rgba(255,255,255,0.03);
-      --card-border: rgba(155,92,255,0.25);
-      --radius: 18px;
-    }
-
-    * {
+    body {
+      background-color: #0e0111;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 40px 15px;
+      text-align: center;
     }
 
     h1 {
       font-size: 48px;
-      font-weight: 700;
-      color: var(--accent);
+      color: #b95cff;
+      margin-top: 60px;
       letter-spacing: 12px;
-      text-align: center;
-      margin-bottom: 40px;
     }
 
-    .lang-select {
+    .language-select {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: var(--panel);
-      color: white;
-      border: 1px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 8px 14px;
-      font-weight: 500;
+      background-color: #140117;
+      border: 1px solid #b95cff;
+      color: #b95cff;
+      padding: 8px 16px;
+      border-radius: 10px;
       cursor: pointer;
+      font-weight: 500;
     }
 
     .card {
-      background: var(--panel);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
+      background-color: #141017;
+      border: 1px solid rgba(255, 92, 255, 0.2);
+      border-radius: 18px;
+      width: 70%;
+      margin: 20px auto;
       padding: 25px;
-      width: 90%;
-      max-width: 800px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 30px rgba(155, 92, 255, 0.1);
+      box-shadow: 0 0 15px rgba(185, 92, 255, 0.2);
+      text-align: left;
+      line-height: 1.6;
     }
 
     .card h2 {
-      color: var(--accent);
-      font-size: 20px;
+      color: #b95cff;
       margin-bottom: 10px;
     }
 
-    .card p {
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 15px;
+    footer {
+      margin: 50px 0;
+      font-size: 14px;
+      color: #888;
     }
 
-    footer {
-      color: #777;
-      font-size: 14px;
-      margin-top: 40px;
-      text-align: center;
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <select class="lang-select" id="langSelect">
-    <option value="en">English</option>
-    <option value="de">Deutsch</option>
-    <option value="ar">العربية</option>
-  </select>
+  <button class="language-select" onclick="switchLanguage()">
+    English
+  </button>
 
-  <h1>Z E N O U R A</h1>
+  <h1>ZENOURA</h1>
 
-  <div class="card" data-en="Privacy Policy" data-de="Datenschutz" data-ar="سياسة الخصوصية">
-    <h2>Privacy Policy</h2>
-    <p>At Zenoura, we respect your privacy and are committed to protecting your personal data...</p>
+  <div id="content">
+    <!-- المحتوى يبدأ هنا -->
   </div>
 
-  <div class="card" data-en="Affiliate Marketing Links" data-de="Affiliate-Links" data-ar="روابط التسويق بالعمولة">
-    <h2>Affiliate Marketing Links</h2>
-    <p>This site contains affiliate marketing links...</p>
-  </div>
-
-  <div class="card" data-en="Terms of Use" data-de="Nutzungsbedingungen" data-ar="شروط الاستخدام">
-    <h2>Terms of Use</h2>
-    <p>By using this site, you agree to the following...</p>
-  </div>
-
-  <div class="card" data-en="Disclaimer" data-de="Haftungsausschluss" data-ar="إخلاء المسؤولية">
-    <h2>Disclaimer</h2>
-    <p>We are not the official entity or owner of any product or service being promoted...</p>
-  </div>
-
-  <div class="card" data-en="Contact Us" data-de="Kontakt" data-ar="اتصل بنا">
-    <h2>Contact Us</h2>
-    <p>If you have any questions, email us at: <b>support@zen-oura.com</b></p>
-  </div>
-
-  <footer>© 2025 Zenoura. All rights reserved.</footer>
+  <footer>
+    © 2025 Zenoura. All rights reserved.
+  </footer>
 
   <script>
-    const translations = {
-      en: {
-        "Privacy Policy": "Privacy Policy",
-        "Affiliate Marketing Links": "Affiliate Marketing Links",
-        "Terms of Use": "Terms of Use",
-        "Disclaimer": "Disclaimer",
-        "Contact Us": "Contact Us",
-      },
-      de: {
-        "Privacy Policy": "Datenschutz",
-        "Affiliate Marketing Links": "Affiliate-Links",
-        "Terms of Use": "Nutzungsbedingungen",
-        "Disclaimer": "Haftungsausschluss",
-        "Contact Us": "Kontakt",
-      },
-      ar: {
-        "Privacy Policy": "سياسة الخصوصية",
-        "Affiliate Marketing Links": "روابط التسويق بالعمولة",
-        "Terms of Use": "شروط الاستخدام",
-        "Disclaimer": "إخلاء المسؤولية",
-        "Contact Us": "اتصل بنا",
-      },
+    const content = document.getElementById("content");
+    const button = document.querySelector(".language-select");
+
+    const texts = {
+      en: `
+        <div class="card">
+          <h2>Privacy Policy</h2>
+          <p>At Zenoura, we respect your privacy and are committed to protecting your personal data. We only collect basic information such as cookies to improve your experience.</p>
+        </div>
+        <div class="card">
+          <h2>Affiliate Marketing Links</h2>
+          <p>This site may contain affiliate links. When you click and make a purchase, we may earn a small commission at no additional cost to you.</p>
+        </div>
+        <div class="card">
+          <h2>Terms of Use</h2>
+          <p>By using this site, you agree to our terms. Information here is for educational and marketing purposes only.</p>
+        </div>
+        <div class="card">
+          <h2>Disclaimer</h2>
+          <p>We are not the official owner of any product or service being promoted. Always verify from the official source before making a purchase.</p>
+        </div>
+        <div class="card">
+          <h2>Contact Us</h2>
+          <p>If you have any questions, contact us at <strong>support@zen-oura.com</strong></p>
+        </div>
+      `,
+      ar: `
+        <div class="card">
+          <h2>سياسة الخصوصية</h2>
+          <p>في Zenoura، نحترم خصوصيتك وملتزمون بحماية بياناتك الشخصية. نقوم بجمع معلومات بسيطة مثل ملفات تعريف الارتباط لتحسين تجربتك.</p>
+        </div>
+        <div class="card">
+          <h2>روابط التسويق بالعمولة</h2>
+          <p>قد يحتوي هذا الموقع على روابط تسويقية بالعمولة. عند النقر على هذه الروابط وإجراء عملية شراء، قد نحصل على عمولة صغيرة دون أي تكلفة إضافية عليك.</p>
+        </div>
+        <div class="card">
+          <h2>شروط الاستخدام</h2>
+          <p>باستخدامك لهذا الموقع، فإنك توافق على شروطنا. جميع المعلومات هنا لأغراض تعليمية وتسويقية فقط.</p>
+        </div>
+        <div class="card">
+          <h2>إخلاء المسؤولية</h2>
+          <p>نحن لسنا المالك الرسمي لأي منتج أو خدمة يتم الترويج لها. يُرجى دائمًا التحقق من المصدر الرسمي قبل إجراء أي عملية شراء.</p>
+        </div>
+        <div class="card">
+          <h2>تواصل معنا</h2>
+          <p>إذا كانت لديك أي أسئلة، يمكنك مراسلتنا على <strong>support@zen-oura.com</strong></p>
+        </div>
+      `,
+      de: `
+        <div class="card">
+          <h2>Datenschutzrichtlinie</h2>
+          <p>Bei Zenoura respektieren wir Ihre Privatsphäre und verpflichten uns, Ihre persönlichen Daten zu schützen. Wir sammeln nur grundlegende Informationen wie Cookies, um Ihre Erfahrung zu verbessern.</p>
+        </div>
+        <div class="card">
+          <h2>Affiliate-Marketing-Links</h2>
+          <p>Diese Website kann Affiliate-Links enthalten. Wenn Sie auf diese Links klicken und einen Kauf tätigen, erhalten wir möglicherweise eine kleine Provision, ohne dass Ihnen zusätzliche Kosten entstehen.</p>
+        </div>
+        <div class="card">
+          <h2>Nutzungsbedingungen</h2>
+          <p>Durch die Nutzung dieser Website stimmen Sie unseren Bedingungen zu. Alle Informationen dienen nur Bildungs- und Marketingzwecken.</p>
+        </div>
+        <div class="card">
+          <h2>Haftungsausschluss</h2>
+          <p>Wir sind nicht der offizielle Eigentümer eines beworbenen Produkts oder Dienstes. Bitte überprüfen Sie die Informationen immer auf der offiziellen Website, bevor Sie einen Kauf tätigen.</p>
+        </div>
+        <div class="card">
+          <h2>Kontakt</h2>
+          <p>Wenn Sie Fragen haben, kontaktieren Sie uns bitte unter <strong>support@zen-oura.com</strong></p>
+        </div>
+      `
     };
 
-    const select = document.getElementById("langSelect");
-    select.addEventListener("change", (e) => {
-      const lang = e.target.value;
-      document.querySelectorAll(".card").forEach((card) => {
-        const title = card.dataset[lang];
-        card.querySelector("h2").textContent = title;
-      });
-      document.body.dir = lang === "ar" ? "rtl" : "ltr";
-    });
+    let currentLang = "en";
+    content.innerHTML = texts[currentLang];
+
+    function switchLanguage() {
+      if (currentLang === "en") {
+        currentLang = "ar";
+        button.textContent = "Deutsch";
+        document.body.style.direction = "rtl";
+      } else if (currentLang === "ar") {
+        currentLang = "de";
+        button.textContent = "English";
+        document.body.style.direction = "ltr";
+      } else {
+        currentLang = "en";
+        button.textContent = "العربية";
+        document.body.style.direction = "ltr";
+      }
+      content.innerHTML = texts[currentLang];
+    }
   </script>
 </body>
 </html>
