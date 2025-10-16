@@ -1,284 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenoura | Contact</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Zenoura</title>
 
-  <!-- Google Ads -->
+  <!-- Google Auto Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
 
   <style>
-    /* ==================== RESET & BASE ==================== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background: radial-gradient(circle at top, #1a0723, #0e0111);
-      color: #fff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
+    :root{
+      --bg-1:#0e0111;
+      --bg-2:#1b0420;
+      --accent:#b95cff;
+      --muted:#cfc7db;
     }
-
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
-    /* ==================== HEADER ==================== */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 8%;
-      background: rgba(20, 0, 30, 0.7);
-      border-bottom: 1px solid rgba(185, 92, 255, 0.3);
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-      z-index: 100;
+    body{
+      margin:0;
+      font-family:"Poppins",sans-serif;
+      background:linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      color:#fff;
+      line-height:1.6;
     }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: #b95cff;
+    header{
+      position:fixed;top:0;left:0;right:0;height:70px;
+      background:rgba(10,2,12,0.8);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 20px;
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(185,92,255,0.1);
+      z-index:1000;
     }
-
-    nav ul {
-      display: flex;
-      gap: 25px;
+    .brand{color:var(--accent);font-weight:800;letter-spacing:3px;}
+    .menu a{
+      margin-left:20px;text-decoration:none;color:#fff;font-weight:600;
+      transition:color .2s;
     }
-
-    nav ul li a {
-      font-weight: 500;
-      transition: 0.3s;
+    .menu a:hover{color:var(--accent);}
+    .container{max-width:900px;margin:120px auto 60px;padding:0 20px;}
+    h1{color:var(--accent);margin-bottom:20px;}
+    p{color:var(--muted);}
+    footer{text-align:center;color:#888;padding:30px 10px;border-top:1px solid rgba(185,92,255,0.1);}
+    form{
+      margin-top:30px;
+      display:flex;flex-direction:column;
+      gap:15px;
+      background-color:rgba(255,255,255,0.05);
+      padding:20px;border-radius:15px;
+      box-shadow:0 0 15px rgba(185,92,255,0.1);
     }
-
-    nav ul li a:hover {
-      color: #b95cff;
+    input,textarea{
+      background-color:#140117;
+      border:1px solid rgba(185,92,255,0.3);
+      border-radius:10px;
+      padding:10px;
+      color:#fff;
+      font-size:15px;
+      resize:none;
     }
-
-    .lang-select {
-      background: transparent;
-      border: 1px solid #b95cff;
-      color: #b95cff;
-      padding: 6px 10px;
-      border-radius: 8px;
-      cursor: pointer;
+    input:focus,textarea:focus{
+      outline:none;
+      border-color:var(--accent);
+      box-shadow:0 0 8px rgba(185,92,255,0.4);
     }
-
-    /* ==================== ADS ==================== */
-    .ad-container {
-      margin: 20px auto;
-      text-align: center;
-      width: 90%;
-      border: 1px dashed rgba(185, 92, 255, 0.3);
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 14px;
-      color: #aaa;
+    button[type=submit]{
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      padding:12px;
+      border-radius:12px;
+      font-weight:600;
+      cursor:pointer;
+      transition:all .3s;
     }
-
-    /* ==================== CONTACT FORM ==================== */
-    section.contact {
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 50px 10%;
-      text-align: center;
+    button[type=submit]:hover{
+      background:#a14cff;
+      transform:scale(1.03);
     }
-
-    section.contact h1 {
-      font-size: 2.5rem;
-      color: #b95cff;
-      margin-bottom: 20px;
+    .lang-switch{margin-top:20px;}
+    .lang-switch button{
+      margin:0 5px;
+      background:transparent;
+      border:1px solid rgba(185,92,255,0.3);
+      color:#fff;
+      border-radius:10px;
+      padding:6px 10px;
+      cursor:pointer;
+      font-weight:600;
     }
-
-    section.contact p {
-      max-width: 600px;
-      color: #ccc;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-
-    form {
-      width: 100%;
-      max-width: 500px;
-      background: rgba(30, 0, 45, 0.5);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(185, 92, 255, 0.1);
-    }
-
-    form input, form textarea {
-      width: 100%;
-      margin-bottom: 20px;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    form textarea {
-      resize: none;
-      height: 120px;
-    }
-
-    form button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(45deg, #b95cff, #7b2fff);
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    form button:hover {
-      opacity: 0.9;
-      box-shadow: 0 0 12px rgba(185, 92, 255, 0.5);
-    }
-
-    /* ==================== FOOTER ==================== */
-    footer {
-      text-align: center;
-      padding: 25px 0;
-      font-size: 14px;
-      color: #999;
-      border-top: 1px solid rgba(185, 92, 255, 0.2);
-    }
-
-    @media (max-width: 768px) {
-      nav ul { display: none; }
-      section.contact h1 { font-size: 2rem; }
+    .lang-switch button.active{
+      background:rgba(185,92,255,0.1);
+      color:var(--accent);
     }
   </style>
 </head>
-
 <body>
-  <!-- ===== HEADER ===== -->
+
   <header>
-    <div class="logo">ZENOURA</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="policy.html">Policy</a></li>
-        <li><a href="affiliate.html">Affiliate</a></li>
-        <li><a href="contact.html" style="color:#b95cff;">Contact</a></li>
-      </ul>
-    </nav>
-    <select class="lang-select" id="langSwitcher" onchange="switchLang()">
-      <option value="en">🇬🇧 English</option>
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="de">🇩🇪 Deutsch</option>
-    </select>
+    <div class="brand">ZENOURA</div>
+    <div class="menu">
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">💎 About</a>
+      <a href="policy.html">📜 Policy</a>
+      <a href="affiliate.html">💼 Affiliate</a>
+    </div>
   </header>
 
-  <!-- ===== TOP AD ===== -->
-  <div class="ad-container">
-    Google Ad Slot (Top)
-    <!-- <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-2696059232288635"
-      data-ad-slot="1234567890"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-  </div>
+  <main class="container" id="content">
+    <h1 id="title">Contact Us</h1>
+    <p id="desc">Have questions or feedback? Send us a message below — we’d love to hear from you!</p>
 
-  <!-- ===== CONTACT SECTION ===== -->
-  <section class="contact" id="contact">
-    <h1 id="contact-title">Contact Us</h1>
-    <p id="contact-desc">
-      We’d love to hear from you! Fill out the form below and we’ll get back to you soon.
-    </p>
-
-    <form id="contact-form" onsubmit="event.preventDefault(); alert(currentLang==='ar'?'تم إرسال النموذج (شكلي فقط)':'Form submitted (demo only)');">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message"></textarea>
-      <button type="submit" id="send-btn">Send Message</button>
+    <form id="contactForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
-  </section>
 
-  <!-- ===== BOTTOM AD ===== -->
-  <div class="ad-container">
-    Google Ad Slot (Bottom)
-    <!-- <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-2696059232288635"
-      data-ad-slot="1234567891"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-  </div>
+    <div class="lang-switch">
+      <button data-lang="en" class="active">🇬🇧 EN</button>
+      <button data-lang="ar">🇸🇦 AR</button>
+      <button data-lang="de">🇩🇪 DE</button>
+    </div>
+  </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer>© 2025 Zenoura. All rights reserved.</footer>
 
   <script>
-    let currentLang = "en";
-    const langElements = {
-      title: document.getElementById("contact-title"),
-      desc: document.getElementById("contact-desc"),
-      name: document.getElementById("name"),
-      email: document.getElementById("email"),
-      message: document.getElementById("message"),
-      send: document.getElementById("send-btn"),
-    };
+    const title=document.getElementById("title");
+    const desc=document.getElementById("desc");
+    const btns=document.querySelectorAll(".lang-switch button");
+    const form=document.getElementById("contactForm");
 
-    const translations = {
-      en: {
-        title: "Contact Us",
-        desc: "We’d love to hear from you! Fill out the form below and we’ll get back to you soon.",
-        name: "Your Name",
-        email: "Your Email",
-        message: "Your Message",
-        send: "Send Message"
+    const translations={
+      en:{
+        title:"Contact Us",
+        desc:"Have questions or feedback? Send us a message below — we’d love to hear from you!",
+        placeholders:["Your Name","Your Email","Your Message","Send Message"]
       },
-      ar: {
-        title: "تواصل معنا",
-        desc: "يسعدنا سماع رأيك! املأ النموذج أدناه وسنعاود الاتصال بك قريبًا.",
-        name: "اسمك",
-        email: "بريدك الإلكتروني",
-        message: "رسالتك",
-        send: "إرسال الرسالة"
+      ar:{
+        title:"اتصل بنا",
+        desc:"هل لديك أسئلة أو ملاحظات؟ أرسل لنا رسالة أدناه — يسعدنا التواصل معك!",
+        placeholders:["اسمك","بريدك الإلكتروني","رسالتك","إرسال الرسالة"]
       },
-      de: {
-        title: "Kontaktieren Sie uns",
-        desc: "Wir würden uns freuen, von Ihnen zu hören! Füllen Sie das Formular unten aus, und wir melden uns bald bei Ihnen.",
-        name: "Ihr Name",
-        email: "Ihre E-Mail",
-        message: "Ihre Nachricht",
-        send: "Nachricht senden"
+      de:{
+        title:"Kontakt",
+        desc:"Haben Sie Fragen oder Feedback? Senden Sie uns unten eine Nachricht — wir freuen uns, von Ihnen zu hören!",
+        placeholders:["Ihr Name","Ihre E-Mail","Ihre Nachricht","Nachricht senden"]
       }
     };
 
-    function switchLang() {
-      currentLang = document.getElementById("langSwitcher").value;
-      const t = translations[currentLang];
-      langElements.title.textContent = t.title;
-      langElements.desc.textContent = t.desc;
-      langElements.name.placeholder = t.name;
-      langElements.email.placeholder = t.email;
-      langElements.message.placeholder = t.message;
-      langElements.send.textContent = t.send;
+    btns.forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        btns.forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+        const lang=btn.dataset.lang;
+        const t=translations[lang];
+        title.textContent=t.title;
+        desc.textContent=t.desc;
+        const inputs=form.querySelectorAll("input,textarea,button");
+        inputs[0].placeholder=t.placeholders[0];
+        inputs[1].placeholder=t.placeholders[1];
+        inputs[2].placeholder=t.placeholders[2];
+        inputs[3].textContent=t.placeholders[3];
+        document.body.dir=(lang==="ar")?"rtl":"ltr";
+      });
+    });
 
-      if (currentLang === "ar") {
-        document.body.style.direction = "rtl";
-      } else {
-        document.body.style.direction = "ltr";
-      }
-    }
+    form.addEventListener("submit",e=>{
+      e.preventDefault();
+      alert("Thank you for your message! (Demo form only)");
+      form.reset();
+    });
   </script>
 </body>
 </html>
