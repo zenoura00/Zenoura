@@ -1,186 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenoura Policies</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenoura</title>
 
-  <!-- Google Ads -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
+<!-- 🔹 Google Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635"
+     crossorigin="anonymous"></script>
 
-  <style>
-    body {
-      background-color: #0e0111;
-      color: #fff;
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+<style>
+  :root {
+    --primary: #b95cff;
+    --bg1: #0e0111;
+    --bg2: #1a0b1d;
+    --text: #fff;
+  }
 
-    h1 {
-      font-size: 48px;
-      color: #b95cff;
-      margin-top: 60px;
-      letter-spacing: 12px;
-    }
+  * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(180deg, var(--bg1), var(--bg2));
+    color: var(--text);
+  }
 
-    .language-select {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: #140117;
-      border: 1px solid #b95cff;
-      color: #b95cff;
-      padding: 8px 16px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 500;
-    }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(20, 1, 23, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    z-index: 100;
+  }
 
-    .card {
-      background-color: #141017;
-      border: 1px solid rgba(255, 92, 255, 0.2);
-      border-radius: 18px;
-      width: 70%;
-      margin: 20px auto;
-      padding: 25px;
-      box-shadow: 0 0 15px rgba(185, 92, 255, 0.2);
-      text-align: left;
-      line-height: 1.6;
-    }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    letter-spacing: 3px;
+  }
 
-    .card h2 {
-      color: #b95cff;
-      margin-bottom: 10px;
-    }
+  nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
 
-    footer {
-      margin: 50px 0;
-      font-size: 14px;
-      color: #888;
-    }
+  nav a:hover {
+    color: var(--primary);
+  }
 
-    @media (max-width: 768px) {
-      .card {
-        width: 90%;
-        padding: 20px;
-      }
+  .language-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+  }
 
-      h1 {
-        font-size: 36px;
-      }
-    }
-  </style>
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px;
+    text-align: center;
+  }
+
+  #home h1 {
+    font-size: 52px;
+    letter-spacing: 8px;
+    color: var(--primary);
+  }
+
+  #home p {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .home-buttons {
+    margin-top: 30px;
+  }
+
+  .home-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 28px;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s;
+    font-weight: 500;
+  }
+
+  .home-buttons a:hover {
+    background: #fff;
+    color: var(--primary);
+    box-shadow: 0 0 20px rgba(185, 92, 255, 0.4);
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(185, 92, 255, 0.2);
+    border-radius: 18px;
+    width: 80%;
+    max-width: 800px;
+    margin: 25px 0;
+    padding: 25px;
+    text-align: left;
+    line-height: 1.7;
+    box-shadow: 0 0 15px rgba(185, 92, 255, 0.1);
+  }
+
+  .card h2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: #aaa;
+    font-size: 14px;
+  }
+
+  .ads-container {
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    header {flex-direction: column; gap: 10px;}
+    nav a {margin: 5px;}
+    #home h1 {font-size: 38px;}
+    .card {width: 90%;}
+  }
+</style>
 </head>
-
 <body>
-  <button class="language-select" onclick="switchLanguage()">
-    English
-  </button>
+  <header>
+    <div class="logo">ZENOURA</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#policy">Policy</a>
+      <a href="#affiliate">Affiliate</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="language-btn" onclick="switchLang()">العربية</button>
+  </header>
 
-  <h1>ZENOURA</h1>
+  <section id="home">
+    <h1 id="homeTitle">Zenoura</h1>
+    <p id="homeText">
+      Digital Luxury & Mindful Living — discover elegance through modern design, wellness, and conscious growth.
+    </p>
+    <div class="home-buttons">
+      <a href="#about" id="exploreBtn">Explore</a>
+      <a href="#contact" id="contactBtn">Contact</a>
+    </div>
+  </section>
 
-  <div id="content">
-    <!-- المحتوى يبدأ هنا -->
-  </div>
+  <section id="about">
+    <div class="card">
+      <h2 id="aboutTitle">About Zenoura</h2>
+      <p id="aboutText">
+        Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. 
+        We connect elegant design, mindfulness, and digital innovation to inspire a calm and meaningful life.
+      </p>
+    </div>
 
-  <footer>
-    © 2025 Zenoura. All rights reserved.
-  </footer>
+    <!-- 🔹 Google Ad #1 -->
+    <div class="ads-container">
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
+           data-ad-client="ca-pub-2696059232288635"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </section>
 
-  <script>
-    const content = document.getElementById("content");
-    const button = document.querySelector(".language-select");
+  <section id="policy">
+    <div class="card">
+      <h2 id="policyTitle">Privacy Policy</h2>
+      <p id="policyText">
+        At Zenoura, we value your privacy. We collect minimal data such as cookies to improve experience and 
+        never share your personal details with third parties.
+      </p>
+    </div>
+  </section>
 
-    const texts = {
-      en: `
-        <div class="card">
-          <h2>Privacy Policy</h2>
-          <p>At Zenoura, we respect your privacy and are committed to protecting your personal data. We only collect basic information such as cookies to improve your experience.</p>
-        </div>
-        <div class="card">
-          <h2>Affiliate Marketing Links</h2>
-          <p>This site may contain affiliate links. When you click and make a purchase, we may earn a small commission at no additional cost to you.</p>
-        </div>
-        <div class="card">
-          <h2>Terms of Use</h2>
-          <p>By using this site, you agree to our terms. Information here is for educational and marketing purposes only.</p>
-        </div>
-        <div class="card">
-          <h2>Disclaimer</h2>
-          <p>We are not the official owner of any product or service being promoted. Always verify from the official source before making a purchase.</p>
-        </div>
-        <div class="card">
-          <h2>Contact Us</h2>
-          <p>If you have any questions, contact us at <strong>support@zen-oura.com</strong></p>
-        </div>
-      `,
-      ar: `
-        <div class="card">
-          <h2>سياسة الخصوصية</h2>
-          <p>في Zenoura، نحترم خصوصيتك وملتزمون بحماية بياناتك الشخصية. نقوم بجمع معلومات بسيطة مثل ملفات تعريف الارتباط لتحسين تجربتك.</p>
-        </div>
-        <div class="card">
-          <h2>روابط التسويق بالعمولة</h2>
-          <p>قد يحتوي هذا الموقع على روابط تسويقية بالعمولة. عند النقر على هذه الروابط وإجراء عملية شراء، قد نحصل على عمولة صغيرة دون أي تكلفة إضافية عليك.</p>
-        </div>
-        <div class="card">
-          <h2>شروط الاستخدام</h2>
-          <p>باستخدامك لهذا الموقع، فإنك توافق على شروطنا. جميع المعلومات هنا لأغراض تعليمية وتسويقية فقط.</p>
-        </div>
-        <div class="card">
-          <h2>إخلاء المسؤولية</h2>
-          <p>نحن لسنا المالك الرسمي لأي منتج أو خدمة يتم الترويج لها. يُرجى دائمًا التحقق من المصدر الرسمي قبل إجراء أي عملية شراء.</p>
-        </div>
-        <div class="card">
-          <h2>تواصل معنا</h2>
-          <p>إذا كانت لديك أي أسئلة، يمكنك مراسلتنا على <strong>support@zen-oura.com</strong></p>
-        </div>
-      `,
-      de: `
-        <div class="card">
-          <h2>Datenschutzrichtlinie</h2>
-          <p>Bei Zenoura respektieren wir Ihre Privatsphäre und verpflichten uns, Ihre persönlichen Daten zu schützen. Wir sammeln nur grundlegende Informationen wie Cookies, um Ihre Erfahrung zu verbessern.</p>
-        </div>
-        <div class="card">
-          <h2>Affiliate-Marketing-Links</h2>
-          <p>Diese Website kann Affiliate-Links enthalten. Wenn Sie auf diese Links klicken und einen Kauf tätigen, erhalten wir möglicherweise eine kleine Provision, ohne dass Ihnen zusätzliche Kosten entstehen.</p>
-        </div>
-        <div class="card">
-          <h2>Nutzungsbedingungen</h2>
-          <p>Durch die Nutzung dieser Website stimmen Sie unseren Bedingungen zu. Alle Informationen dienen nur Bildungs- und Marketingzwecken.</p>
-        </div>
-        <div class="card">
-          <h2>Haftungsausschluss</h2>
-          <p>Wir sind nicht der offizielle Eigentümer eines beworbenen Produkts oder Dienstes. Bitte überprüfen Sie die Informationen immer auf der offiziellen Website, bevor Sie einen Kauf tätigen.</p>
-        </div>
-        <div class="card">
-          <h2>Kontakt</h2>
-          <p>Wenn Sie Fragen haben, kontaktieren Sie uns bitte unter <strong>support@zen-oura.com</strong></p>
-        </div>
-      `
-    };
+  <section id="affiliate">
+    <div class="card">
+      <h2 id="affiliateTitle">Affiliate Disclosure</h2>
+      <p id="affiliateText">
+        Some of our links are affiliate links. This means we may earn a small commission when you purchase 
+        through them — at no additional cost to you. We only recommend brands we trust and love.
+      </p>
+    </div>
+  </section>
 
-    let currentLang = "en";
-    content.innerHTML = texts[currentLang];
+  <section id="contact">
+    <div class="card">
+      <h2 id="contactTitle">Contact Us</h2>
+      <p id="contactText">
+        Have a question or collaboration idea? Reach us at 
+        <strong>support@zen-oura.com</strong>
+      </p>
+    </div>
 
-    function switchLanguage() {
-      if (currentLang === "en") {
-        currentLang = "ar";
-        button.textContent = "Deutsch";
-        document.body.style.direction = "rtl";
-      } else if (currentLang === "ar") {
-        currentLang = "de";
-        button.textContent = "English";
-        document.body.style.direction = "ltr";
-      } else {
-        currentLang = "en";
-        button.textContent = "العربية";
-        document.body.style.direction = "ltr";
-      }
-      content.innerHTML = texts[currentLang];
+    <!-- 🔹 Google Ad #2 -->
+    <div class="ads-container">
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
+           data-ad-client="ca-pub-2696059232288635"
+           data-ad-slot="9876543210"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </section>
+
+  <footer>© 2025 Zenoura. All rights reserved.</footer>
+
+<script>
+  let lang = "en";
+  const btn = document.querySelector(".language-btn");
+
+  const texts = {
+    en: {
+      homeTitle: "Zenoura",
+      homeText: "Digital Luxury & Mindful Living — discover elegance through modern design, wellness, and conscious growth.",
+      exploreBtn: "Explore",
+      contactBtn: "Contact",
+      aboutTitle: "About Zenoura",
+      aboutText: "Zenoura is a digital lifestyle platform redefining luxury through balance, wellness, and creativity. We connect elegant design, mindfulness, and digital innovation to inspire a calm and meaningful life.",
+      policyTitle: "Privacy Policy",
+      policyText: "At Zenoura, we value your privacy. We collect minimal data such as cookies to improve experience and never share your personal details with third parties.",
+      affiliateTitle: "Affiliate Disclosure",
+      affiliateText: "Some of our links are affiliate links. This means we may earn a small commission when you purchase through them — at no additional cost to you. We only recommend brands we trust and love.",
+      contactTitle: "Contact Us",
+      contactText: "Have a question or collaboration idea? Reach us at <strong>support@zen-oura.com</strong>",
+      nextLang: "العربية",
+      dir: "ltr"
+    },
+    ar: {
+      homeTitle: "زينورا",
+      homeText: "الرفاهية الرقمية والعيش الواعي — اكتشف الأناقة من خلال التصميم العصري والرفاهية والنمو المتزن.",
+      exploreBtn: "اكتشف",
+      contactBtn: "تواصل معنا",
+      aboutTitle: "حول زينورا",
+      aboutText: "زينورا هي منصة أسلوب حياة رقمية تعيد تعريف الفخامة من خلال التوازن والرفاهية والإبداع. نربط بين التصميم الأنيق والوعي الذهني والابتكار الرقمي لإلهام حياة هادئة وذات معنى.",
+      policyTitle: "سياسة الخصوصية",
+      policyText: "في زينورا، نحترم خصوصيتك ونجمع فقط الحد الأدنى من البيانات مثل ملفات تعريف الارتباط لتحسين تجربتك، ولا نشارك بياناتك الشخصية مع أي طرف ثالث.",
+      affiliateTitle: "إفصاح التسويق بالعمولة",
+      affiliateText: "قد تحتوي بعض روابطنا على تسويق بالعمولة، مما يعني أننا نحصل على عمولة صغيرة عند الشراء عبرها — دون أي تكلفة إضافية عليك. نحن نوصي فقط بالعلامات التجارية التي نثق بها ونحبها.",
+      contactTitle: "تواصل معنا",
+      contactText: "هل لديك سؤال أو فكرة تعاون؟ يمكنك مراسلتنا على <strong>support@zen-oura.com</strong>",
+      nextLang: "Deutsch",
+      dir: "rtl"
+    },
+    de: {
+      homeTitle: "Zenoura",
+      homeText: "Digitale Luxus und achtsames Leben – entdecken Sie Eleganz durch modernes Design, Wohlbefinden und bewusstes Wachstum.",
+      exploreBtn: "Entdecken",
+      contactBtn: "Kontakt",
+      aboutTitle: "Über Zenoura",
+      aboutText: "Zenoura ist eine digitale Lifestyle-Plattform, die Luxus durch Balance, Wohlbefinden und Kreativität neu definiert. Wir verbinden elegantes Design, Achtsamkeit und digitale Innovation für ein ruhiges, bedeutungsvolles Leben.",
+      policyTitle: "Datenschutzrichtlinie",
+      policyText: "Bei Zenoura respektieren wir Ihre Privatsphäre. Wir sammeln minimale Daten wie Cookies zur Verbesserung der Erfahrung und geben Ihre persönlichen Daten niemals an Dritte weiter.",
+      affiliateTitle: "Affiliate-Offenlegung",
+      affiliateText: "Einige unserer Links sind Affiliate-Links. Das bedeutet, dass wir möglicherweise eine kleine Provision erhalten, wenn Sie über sie einkaufen – ohne zusätzliche Kosten für Sie. Wir empfehlen nur Marken, denen wir vertrauen.",
+      contactTitle: "Kontakt",
+      contactText: "Haben Sie eine Frage oder möchten Sie mit uns zusammenarbeiten? Schreiben Sie uns an <strong>support@zen-oura.com</strong>",
+      nextLang: "English",
+      dir: "ltr"
     }
-  </script>
+  };
+
+  function switchLang() {
+    lang = lang === "en" ? "ar" : lang === "ar" ? "de" : "en";
+    const t = texts[lang];
+    document.body.style.direction = t.dir;
+    btn.textContent = t.nextLang;
+    for (const id in t) {
+      if (id.endsWith("Text") || id.endsWith("Title") || id.endsWith("Btn"))
+        document.getElementById(id).innerHTML = t[id];
+    }
+  }
+</script>
 </body>
 </html>
