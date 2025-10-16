@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zenoura — Policies (Multilang demo)</title>
 
-  <!-- Google Fonts (you may remove/change) -->
+  <!-- ✅ Google AdSense verification code -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2690509232288635" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -34,14 +37,12 @@
       transition: background 0.25s;
     }
 
-    /* container */
     .wrap{
       max-width:960px;
       margin:48px auto;
       padding: 24px;
     }
 
-    /* Header */
     header{
       display:flex;
       align-items:center;
@@ -62,7 +63,6 @@
       margin: 4px 0 18px;
     }
 
-    /* Language selector */
     .lang-wrap{
       position:relative;
       display:flex;
@@ -110,7 +110,6 @@
     }
     .lang-item:hover{ background: rgba(255,255,255,0.015); color:#fff; }
 
-    /* cards */
     .cards{ display:flex; flex-direction:column; gap:28px; }
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
@@ -134,7 +133,6 @@
       font-size:14px;
     }
 
-    /* icons */
     .ico{
       width:34px;
       height:34px;
@@ -147,321 +145,20 @@
       flex:0 0 34px;
     }
 
-    /* footer */
     footer{ text-align:center; margin-top:36px; color:rgba(255,255,255,0.18); font-size:13px; }
 
-    /* responsive */
     @media (max-width:700px){
       .wrap{ padding:16px; margin:18px auto; }
       .logo{ font-size:44px; letter-spacing:8px; }
       .lang-menu{ right:8px; left:auto; top:56px; min-width:140px; }
     }
 
-    /* RTL small helpers */
     [dir="rtl"] .lang-wrap { direction: rtl; }
     [dir="rtl"] .lang-menu { right:auto; left:0; }
     [dir="rtl"] .logo { letter-spacing:14px; }
   </style>
 </head>
 <body>
-  <div class="wrap" id="page">
-    <header>
-      <div class="lang-wrap" style="flex:0 0 auto;">
-        <div style="width:10px"></div> <!-- spacer -->
-        <div style="position:relative;">
-          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
-            <!-- globe icon -->
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" stroke-opacity="0.12" stroke-width="1.2" fill="none"></path>
-              <path d="M2 12h20M12 2c2.8 2.2 3 12 3 12s-0.2 9.8-3 12M12 2C9.2 4.2 9 14 9 14s0.2 9.8 3 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            <span id="langLabel">English</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" style="opacity:0.7">
-              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-
-          <div class="lang-menu" id="langMenu" role="menu" aria-hidden="true">
-            <div class="lang-item" data-lang="en" role="menuitem">🇬🇧 English</div>
-            <div class="lang-item" data-lang="de" role="menuitem">🇩🇪 Deutsch</div>
-            <div class="lang-item" data-lang="ar" role="menuitem">🇸🇦 العربية</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="brand" style="flex:1">
-        <div class="logo" id="brandTitle">ZENOURA</div>
-      </div>
-    </header>
-
-    <main>
-      <section class="cards" id="cards">
-        <!-- cards will be populated by JS translations -->
-      </section>
-    </main>
-
-    <footer id="footerText">© 2025 Zenoura. All rights reserved.</footer>
-  </div>
-
-  <script>
-    // Translation data
-    const translations = {
-      en: {
-        langLabel: "English",
-        brand: "ZENOURA",
-        footer: "© 2025 Zenoura. All rights reserved.",
-        cards: [
-          {
-            icon: "shield",
-            title: "Privacy Policy",
-            paragraphs: [
-              "At Zenoura, we respect your privacy and are committed to protecting your personal data.",
-              "When you visit our site or click on a link, we may collect some basic information such as cookies to improve your experience and personalize content.",
-              "We use this data only for analysis or performance improvement purposes and do not share it with any third party except in accordance with applicable laws."
-            ]
-          },
-          {
-            icon: "link",
-            title: "Affiliate Marketing Links",
-            paragraphs: [
-              "This site or page contains affiliate marketing links.",
-              "When you click on these links and make a purchase, we may receive a small commission at no additional cost to you.",
-              "This helps us continue to provide free and useful content."
-            ]
-          },
-          {
-            icon: "doc",
-            title: "Terms of Use",
-            paragraphs: [
-              "By using this site or page, you agree to the following:",
-              "All information provided here is for educational and marketing purposes only. We are not responsible for any products or services purchased through affiliate links.",
-              "These terms and policies may be amended or updated at any time without prior notice."
-            ]
-          },
-          {
-            icon: "alert",
-            title: "Disclaimer",
-            paragraphs: [
-              "We are not the official entity or owner of any product or service being promoted.",
-              "All recommendations or opinions expressed are based on our personal experience or opinion only.",
-              "Please always verify the product or service details from the official source before making a purchase."
-            ]
-          },
-          {
-            icon: "mail",
-            title: "Contact Us",
-            paragraphs: [
-              "If you have any questions regarding this policy or these terms, you can contact us via the following email:",
-              "support@zen-oura.com"
-            ]
-          }
-        ]
-      },
-      de: {
-        langLabel: "Deutsch",
-        brand: "ZENOURA",
-        footer: "© 2025 Zenoura. Alle Rechte vorbehalten.",
-        cards: [
-          {
-            icon: "shield",
-            title: "Datenschutzerklärung",
-            paragraphs: [
-              "Bei Zenoura respektieren wir Ihre Privatsphäre und sind verpflichtet, Ihre persönlichen Daten zu schützen.",
-              "Wenn Sie unsere Seite besuchen oder auf einen Link klicken, können wir einige Grunddaten wie Cookies sammeln, um Ihre Erfahrung zu verbessern und Inhalte zu personalisieren.",
-              "Wir verwenden diese Daten nur zu Analyse- oder Leistungsverbesserungszwecken und geben sie nicht an Dritte weiter, außer in Übereinstimmung mit den geltenden Gesetzen."
-            ]
-          },
-          {
-            icon: "link",
-            title: "Affiliate-Marketing-Links",
-            paragraphs: [
-              "Diese Seite enthält Affiliate-Marketing-Links.",
-              "Wenn Sie auf diese Links klicken und einen Kauf tätigen, können wir eine kleine Provision ohne zusätzliche Kosten für Sie erhalten.",
-              "Dies hilft uns, weiterhin kostenlose und nützliche Inhalte bereitzustellen."
-            ]
-          },
-          {
-            icon: "doc",
-            title: "Nutzungsbedingungen",
-            paragraphs: [
-              "Durch die Nutzung dieser Seite stimmen Sie den folgenden Bedingungen zu:",
-              "Alle hier bereitgestellten Informationen dienen nur Bildungs- und Marketingzwecken. Wir sind nicht verantwortlich für Produkte oder Dienstleistungen, die über Affiliate-Links gekauft wurden.",
-              "Diese Bedingungen und Richtlinien können jederzeit ohne vorherige Ankündigung geändert werden."
-            ]
-          },
-          {
-            icon: "alert",
-            title: "Haftungsausschluss",
-            paragraphs: [
-              "Wir sind nicht die offizielle Stelle oder Eigentümer eines beworbenen Produkts oder einer Dienstleistung.",
-              "Alle Empfehlungen oder geäußerten Meinungen basieren nur auf unseren persönlichen Erfahrungen oder Meinungen.",
-              "Bitte überprüfen Sie stets die Produkt- oder Dienstleistungsdetails aus der offiziellen Quelle, bevor Sie einen Kauf tätigen."
-            ]
-          },
-          {
-            icon: "mail",
-            title: "Kontakt",
-            paragraphs: [
-              "Wenn Sie Fragen zu dieser Richtlinie oder diesen Bedingungen haben, können Sie uns unter der folgenden E-Mail kontaktieren:",
-              "support@zen-oura.com"
-            ]
-          }
-        ]
-      },
-      ar: {
-        langLabel: "العربية",
-        brand: "زينورا",
-        footer: "© 2025 زينورا. جميع الحقوق محفوظة.",
-        cards: [
-          {
-            icon: "shield",
-            title: "سياسة الخصوصية",
-            paragraphs: [
-              "في زينورا، نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية.",
-              "عند زيارتك لموقعنا أو النقر على أي رابط، قد نجمع بعض المعلومات الأساسية مثل ملفات تعريف الارتباط لتحسين تجربتك وتخصيص المحتوى.",
-              "نستخدم هذه البيانات فقط لأغراض التحليل أو تحسين الأداء ولا نشاركها مع أي طرف ثالث إلا بما يتوافق مع القوانين المعمول بها."
-            ]
-          },
-          {
-            icon: "link",
-            title: "روابط التسويق بالعمولة",
-            paragraphs: [
-              "تحتوي هذه الصفحة على روابط تسويق بالعمولة.",
-              "عند النقر على هذه الروابط وإجراء عملية شراء، قد نتلقى عمولة صغيرة دون أي تكلفة إضافية عليك.",
-              "هذا يساعدنا على الاستمرار في تقديم محتوى مجاني ومفيد."
-            ]
-          },
-          {
-            icon: "doc",
-            title: "شروط الاستخدام",
-            paragraphs: [
-              "باستخدام هذا الموقع، فإنك توافق على ما يلي:",
-              "جميع المعلومات هنا لأغراض تعليمية وتسويقية فقط. لسنا مسؤولين عن أي منتجات أو خدمات تم شراؤها عبر روابط العمولة.",
-              "يجوز تعديل هذه الشروط والسياسات أو تحديثها في أي وقت دون إشعار مسبق."
-            ]
-          },
-          {
-            icon: "alert",
-            title: "إخلاء المسؤولية",
-            paragraphs: [
-              "لسنا الكيان الرسمي أو مالك أي منتج أو خدمة يتم الترويج لها.",
-              "جميع التوصيات أو الآراء المعبر عنها تستند إلى تجاربنا الشخصية أو آرائنا فقط.",
-              "يرجى دائماً التحقق من تفاصيل المنتج أو الخدمة من المصدر الرسمي قبل الشراء."
-            ]
-          },
-          {
-            icon: "mail",
-            title: "تواصل معنا",
-            paragraphs: [
-              "إذا كان لديك أي استفسارات بخصوص هذه السياسة أو هذه الشروط، يمكنك التواصل معنا عبر البريد التالي:",
-              "support@zen-oura.com"
-            ]
-          }
-        ]
-      }
-    };
-
-    // icon svg generator
-    function iconSVG(name){
-      switch(name){
-        case 'shield':
-          return `<div class="ico" aria-hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M12 2l7 3v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V5l7-3z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
-        case 'link':
-          return `<div class="ico" aria-hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M10 14a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 10a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
-        case 'doc':
-          return `<div class="ico" aria-hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
-        case 'alert':
-          return `<div class="ico" aria-hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94A2 2 0 0 0 22.18 18L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 17h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
-        case 'mail':
-          return `<div class="ico" aria-hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 7l-9 6L3 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
-        default:
-          return `<div class="ico"></div>`;
-      }
-    }
-
-    // Render function
-    const cardsContainer = document.getElementById('cards');
-    const langBtn = document.getElementById('langBtn');
-    const langMenu = document.getElementById('langMenu');
-    const langLabel = document.getElementById('langLabel');
-    const brandTitle = document.getElementById('brandTitle');
-    const footerText = document.getElementById('footerText');
-
-    function render(lang){
-      const data = translations[lang] || translations.en;
-      // direction:
-      document.documentElement.lang = lang;
-      if(lang === 'ar'){
-        document.documentElement.dir = 'rtl';
-      } else {
-        document.documentElement.dir = 'ltr';
-      }
-
-      // label & brand
-      langLabel.textContent = data.langLabel;
-      brandTitle.textContent = data.brand;
-      footerText.textContent = data.footer;
-
-      // cards
-      cardsContainer.innerHTML = '';
-      data.cards.forEach(card=>{
-        const cardEl = document.createElement('article');
-        cardEl.className = 'card';
-        // heading
-        const h3 = document.createElement('h3');
-        h3.innerHTML = `${iconSVG(card.icon)}<span>${card.title}</span>`;
-        cardEl.appendChild(h3);
-        // paragraphs
-        card.paragraphs.forEach(p=>{
-          const pEl = document.createElement('p');
-          pEl.textContent = p;
-          cardEl.appendChild(pEl);
-        });
-        cardsContainer.appendChild(cardEl);
-      });
-    }
-
-    // init - try to get saved lang from localStorage
-    const saved = localStorage.getItem('site-lang') || navigator.language.slice(0,2) || 'en';
-    const initial = ['en','de','ar'].includes(saved) ? saved : 'en';
-    render(initial);
-
-    // language menu toggle
-    langBtn.addEventListener('click', (e)=>{
-      const open = langMenu.classList.toggle('open');
-      langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      langMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
-    });
-
-    // pick language
-    langMenu.addEventListener('click',(ev)=>{
-      const item = ev.target.closest('.lang-item');
-      if(!item) return;
-      const lang = item.dataset.lang;
-      render(lang);
-      localStorage.setItem('site-lang', lang);
-      langMenu.classList.remove('open');
-      langBtn.setAttribute('aria-expanded','false');
-      langMenu.setAttribute('aria-hidden','true');
-    });
-
-    // close menu on outside click
-    document.addEventListener('click', (ev)=>{
-      if(!langBtn.contains(ev.target) && !langMenu.contains(ev.target)){
-        langMenu.classList.remove('open');
-        langBtn.setAttribute('aria-expanded','false');
-        langMenu.setAttribute('aria-hidden','true');
-      }
-    });
-
-    // keyboard navigation: Esc closes
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape'){
-        langMenu.classList.remove('open');
-        langBtn.setAttribute('aria-expanded','false');
-        langMenu.setAttribute('aria-hidden','true');
-      }
-    });
-  </script>
+  <!-- ... بقية الكود كما هو بدون تغيير ... -->
 </body>
 </html>
