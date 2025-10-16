@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenoura | Contact</title>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2696059232288635" crossorigin="anonymous"></script>
+
+  <style>
+    /* ==================== RESET & BASE ==================== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top, #1a0723, #0e0111);
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ==================== HEADER ==================== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(20, 0, 30, 0.7);
+      border-bottom: 1px solid rgba(185, 92, 255, 0.3);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #b95cff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b95cff;
+    }
+
+    .lang-select {
+      background: transparent;
+      border: 1px solid #b95cff;
+      color: #b95cff;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* ==================== ADS ==================== */
+    .ad-container {
+      margin: 20px auto;
+      text-align: center;
+      width: 90%;
+      border: 1px dashed rgba(185, 92, 255, 0.3);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* ==================== CONTACT FORM ==================== */
+    section.contact {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 10%;
+      text-align: center;
+    }
+
+    section.contact h1 {
+      font-size: 2.5rem;
+      color: #b95cff;
+      margin-bottom: 20px;
+    }
+
+    section.contact p {
+      max-width: 600px;
+      color: #ccc;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    form {
+      width: 100%;
+      max-width: 500px;
+      background: rgba(30, 0, 45, 0.5);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(185, 92, 255, 0.1);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    form textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #b95cff, #7b2fff);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      opacity: 0.9;
+      box-shadow: 0 0 12px rgba(185, 92, 255, 0.5);
+    }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      font-size: 14px;
+      color: #999;
+      border-top: 1px solid rgba(185, 92, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      section.contact h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">ZENOURA</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="policy.html">Policy</a></li>
+        <li><a href="affiliate.html">Affiliate</a></li>
+        <li><a href="contact.html" style="color:#b95cff;">Contact</a></li>
+      </ul>
+    </nav>
+    <select class="lang-select" id="langSwitcher" onchange="switchLang()">
+      <option value="en">🇬🇧 English</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="de">🇩🇪 Deutsch</option>
+    </select>
+  </header>
+
+  <!-- ===== TOP AD ===== -->
+  <div class="ad-container">
+    Google Ad Slot (Top)
+    <!-- <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2696059232288635"
+      data-ad-slot="1234567890"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+  </div>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact" id="contact">
+    <h1 id="contact-title">Contact Us</h1>
+    <p id="contact-desc">
+      We’d love to hear from you! Fill out the form below and we’ll get back to you soon.
+    </p>
+
+    <form id="contact-form" onsubmit="event.preventDefault(); alert(currentLang==='ar'?'تم إرسال النموذج (شكلي فقط)':'Form submitted (demo only)');">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button type="submit" id="send-btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== BOTTOM AD ===== -->
+  <div class="ad-container">
+    Google Ad Slot (Bottom)
+    <!-- <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2696059232288635"
+      data-ad-slot="1234567891"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>© 2025 Zenoura. All rights reserved.</footer>
+
+  <script>
+    let currentLang = "en";
+    const langElements = {
+      title: document.getElementById("contact-title"),
+      desc: document.getElementById("contact-desc"),
+      name: document.getElementById("name"),
+      email: document.getElementById("email"),
+      message: document.getElementById("message"),
+      send: document.getElementById("send-btn"),
+    };
+
+    const translations = {
+      en: {
+        title: "Contact Us",
+        desc: "We’d love to hear from you! Fill out the form below and we’ll get back to you soon.",
+        name: "Your Name",
+        email: "Your Email",
+        message: "Your Message",
+        send: "Send Message"
+      },
+      ar: {
+        title: "تواصل معنا",
+        desc: "يسعدنا سماع رأيك! املأ النموذج أدناه وسنعاود الاتصال بك قريبًا.",
+        name: "اسمك",
+        email: "بريدك الإلكتروني",
+        message: "رسالتك",
+        send: "إرسال الرسالة"
+      },
+      de: {
+        title: "Kontaktieren Sie uns",
+        desc: "Wir würden uns freuen, von Ihnen zu hören! Füllen Sie das Formular unten aus, und wir melden uns bald bei Ihnen.",
+        name: "Ihr Name",
+        email: "Ihre E-Mail",
+        message: "Ihre Nachricht",
+        send: "Nachricht senden"
+      }
+    };
+
+    function switchLang() {
+      currentLang = document.getElementById("langSwitcher").value;
+      const t = translations[currentLang];
+      langElements.title.textContent = t.title;
+      langElements.desc.textContent = t.desc;
+      langElements.name.placeholder = t.name;
+      langElements.email.placeholder = t.email;
+      langElements.message.placeholder = t.message;
+      langElements.send.textContent = t.send;
+
+      if (currentLang === "ar") {
+        document.body.style.direction = "rtl";
+      } else {
+        document.body.style.direction = "ltr";
+      }
+    }
+  </script>
+</body>
+</html>
