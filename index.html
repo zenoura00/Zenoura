@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Google AdSense -->
+  <script async 
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" 
+    crossorigin="anonymous"></script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zenoura — Policies (Multilang demo)</title>
-
-  <!-- ✅ Google AdSense verification code -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2690509232288635" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -14,151 +16,124 @@
   <style>
     :root{
       --bg:#0e0b11;
-      --panel:#141017;
-      --accent:#9b5cff; /* main purple */
-      --accent-2:#6f2bd6;
+      --accent:#9b5cff;
       --muted:#bfb7c9;
-      --glass: rgba(255,255,255,0.03);
       --card-border: rgba(155,92,255,0.25);
-      --glow: 0 8px 40px rgba(155,92,255,0.12), inset 0 1px 0 rgba(255,255,255,0.02);
+      --glow: 0 8px 40px rgba(155,92,255,0.12);
       --radius:18px;
     }
-
     html,body{
-      height:100%;
-      margin:0;
-      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 400px at 10% 10%, rgba(111,43,214,0.06), transparent),
-                  radial-gradient(900px 300px at 90% 80%, rgba(155,92,255,0.03), transparent),
-                  var(--bg);
+      height:100%;margin:0;
+      font-family:"Poppins",sans-serif;
+      background:radial-gradient(1200px 400px at 10% 10%,rgba(111,43,214,0.06),transparent),
+                 radial-gradient(900px 300px at 90% 80%,rgba(155,92,255,0.03),transparent),
+                 var(--bg);
       color:#e6e0ee;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      transition: background 0.25s;
     }
-
-    .wrap{
-      max-width:960px;
-      margin:48px auto;
-      padding: 24px;
-    }
-
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:36px;
-    }
-    .brand{
-      text-align:center;
-      width:100%;
-    }
-    .logo{
-      font-size:64px;
-      letter-spacing:14px;
-      font-weight:700;
-      color:var(--accent);
-      text-shadow: 0 6px 30px rgba(111,43,214,0.12);
-      margin: 4px 0 18px;
-    }
-
-    .lang-wrap{
-      position:relative;
-      display:flex;
-      justify-content:flex-end;
-      align-items:center;
-      gap:12px;
-      z-index:10;
-    }
-    .lang-btn{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.04);
-      color:var(--muted);
-      padding:10px 14px;
-      border-radius:12px;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-weight:600;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-      backdrop-filter: blur(6px);
-    }
-    .lang-btn svg{ width:18px; height:18px; opacity:0.95; }
-
-    .lang-menu{
-      position:absolute;
-      right:0;
-      top:56px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;
-      overflow:hidden;
-      border:1px solid rgba(155,92,255,0.12);
-      box-shadow: var(--glow);
-      display:none;
-      min-width:160px;
-    }
-    .lang-menu.open{ display:block; }
-    .lang-item{
-      padding:10px 12px;
-      cursor:pointer;
-      color:var(--muted);
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    .lang-item:hover{ background: rgba(255,255,255,0.015); color:#fff; }
-
-    .cards{ display:flex; flex-direction:column; gap:28px; }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
-      border-radius: var(--radius);
-      border: 1px solid var(--card-border);
-      padding:28px;
-      box-shadow: var(--glow);
-    }
-    .card h3{
-      margin:0 0 12px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      color:#fff;
-      font-size:20px;
-    }
-    .card p{
-      margin:8px 0;
-      color:var(--muted);
-      line-height:1.6;
-      font-size:14px;
-    }
-
-    .ico{
-      width:34px;
-      height:34px;
-      display:inline-grid;
-      place-items:center;
-      border-radius:10px;
-      background: linear-gradient(180deg, rgba(155,92,255,0.12), rgba(111,43,214,0.06));
-      box-shadow: 0 6px 18px rgba(111,43,214,0.06);
-      color:var(--accent);
-      flex:0 0 34px;
-    }
-
-    footer{ text-align:center; margin-top:36px; color:rgba(255,255,255,0.18); font-size:13px; }
-
-    @media (max-width:700px){
-      .wrap{ padding:16px; margin:18px auto; }
-      .logo{ font-size:44px; letter-spacing:8px; }
-      .lang-menu{ right:8px; left:auto; top:56px; min-width:140px; }
-    }
-
-    [dir="rtl"] .lang-wrap { direction: rtl; }
-    [dir="rtl"] .lang-menu { right:auto; left:0; }
-    [dir="rtl"] .logo { letter-spacing:14px; }
+    .wrap{max-width:960px;margin:48px auto;padding:24px;}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;}
+    .brand{text-align:center;width:100%;}
+    .logo{font-size:64px;letter-spacing:14px;font-weight:700;color:var(--accent);text-shadow:0 6px 30px rgba(111,43,214,0.12);margin:4px 0 18px;}
+    .lang-wrap{position:relative;display:flex;justify-content:flex-end;z-index:10;}
+    .lang-btn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:10px 14px;border-radius:12px;cursor:pointer;display:flex;align-items:center;gap:8px;font-weight:600;}
+    .lang-btn svg{width:18px;height:18px;}
+    .lang-menu{position:absolute;right:0;top:56px;background:rgba(255,255,255,0.02);border-radius:12px;overflow:hidden;border:1px solid rgba(155,92,255,0.12);box-shadow:var(--glow);display:none;min-width:160px;}
+    .lang-menu.open{display:block;}
+    .lang-item{padding:10px 12px;cursor:pointer;color:var(--muted);}
+    .lang-item:hover{background:rgba(255,255,255,0.03);color:#fff;}
+    .cards{display:flex;flex-direction:column;gap:28px;}
+    .card{background:rgba(255,255,255,0.02);border-radius:var(--radius);border:1px solid var(--card-border);padding:28px;box-shadow:var(--glow);}
+    .card h3{margin:0 0 12px;display:flex;gap:12px;align-items:center;color:#fff;font-size:20px;}
+    .card p{margin:8px 0;color:var(--muted);line-height:1.6;font-size:14px;}
+    .ico{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:rgba(155,92,255,0.12);color:var(--accent);}
+    footer{text-align:center;margin-top:36px;color:rgba(255,255,255,0.18);font-size:13px;}
+    [dir="rtl"] .lang-menu{left:0;right:auto;}
+    [dir="rtl"] .card h3{flex-direction:row-reverse;}
+    @media(max-width:700px){.wrap{padding:16px;}.logo{font-size:44px;letter-spacing:8px;}}
   </style>
 </head>
 <body>
-  <!-- ... بقية الكود كما هو بدون تغيير ... -->
+  <div class="wrap" id="page">
+    <header>
+      <div class="lang-wrap">
+        <div style="position:relative;">
+          <button class="lang-btn" id="langBtn">
+            🌐 <span id="langLabel">English</span>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <div class="lang-item" data-lang="en">🇬🇧 English</div>
+            <div class="lang-item" data-lang="de">🇩🇪 Deutsch</div>
+            <div class="lang-item" data-lang="ar">🇸🇦 العربية</div>
+          </div>
+        </div>
+      </div>
+      <div class="brand">
+        <div class="logo" id="brandTitle">ZENOURA</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="cards" id="cards"></section>
+    </main>
+
+    <footer id="footerText">© 2025 Zenoura. All rights reserved.</footer>
+  </div>
+
+  <script>
+    const translations={
+      en:{langLabel:"English",brand:"ZENOURA",footer:"© 2025 Zenoura. All rights reserved.",cards:[
+        {icon:"shield",title:"Privacy Policy",p:["At Zenoura, we respect your privacy and are committed to protecting your personal data.","When you visit our site or click a link, we may collect some basic information such as cookies to improve your experience.","We use this data only for analysis or performance improvement and do not share it with any third party."]},
+        {icon:"link",title:"Affiliate Marketing Links",p:["This site contains affiliate links.","When you click on them and make a purchase, we may receive a small commission at no extra cost to you.","This helps us continue providing free and useful content."]},
+        {icon:"doc",title:"Terms of Use",p:["By using this site you agree to the following:","All information is for educational and marketing purposes only.","We are not responsible for any products or services purchased through affiliate links."]},
+        {icon:"alert",title:"Disclaimer",p:["We are not the official entity of any promoted product.","All recommendations are based on our personal experience.","Please verify details from the official source before purchasing."]},
+        {icon:"mail",title:"Contact Us",p:["If you have any questions, contact us at:","zenoura28@gmail.com"]}
+      ]},
+      de:{langLabel:"Deutsch",brand:"ZENOURA",footer:"© 2025 Zenoura. Alle Rechte vorbehalten.",cards:[
+        {icon:"shield",title:"Datenschutzerklärung",p:["Wir respektieren Ihre Privatsphäre und schützen Ihre Daten.","Beim Besuch unserer Seite können Cookies gesammelt werden, um Ihre Erfahrung zu verbessern.","Diese Daten werden nur zur Analyse oder Leistungsverbesserung genutzt."]},
+        {icon:"link",title:"Affiliate-Links",p:["Diese Seite enthält Affiliate-Marketing-Links.","Wenn Sie auf diese Links klicken und kaufen, erhalten wir ggf. eine kleine Provision.","So können wir weiterhin kostenlose Inhalte anbieten."]},
+        {icon:"doc",title:"Nutzungsbedingungen",p:["Durch Nutzung der Seite stimmen Sie zu:","Alle Infos dienen Bildungs- und Marketingzwecken.","Wir übernehmen keine Verantwortung für Produkte über Affiliate-Links."]},
+        {icon:"alert",title:"Haftungsausschluss",p:["Wir sind nicht der offizielle Eigentümer beworbener Produkte.","Empfehlungen basieren auf eigenen Erfahrungen.","Bitte prüfen Sie Details aus offizieller Quelle vor dem Kauf."]},
+        {icon:"mail",title:"Kontakt",p:["Bei Fragen kontaktieren Sie uns unter:","zenoura28@gmail.com"]}
+      ]},
+      ar:{langLabel:"العربية",brand:"زينورا",footer:"© 2025 زينورا. جميع الحقوق محفوظة.",cards:[
+        {icon:"shield",title:"سياسة الخصوصية",p:["في زينورا نحترم خصوصيتك ونلتزم بحماية بياناتك.","قد نجمع بعض المعلومات مثل ملفات تعريف الارتباط لتحسين تجربتك.","نستخدم البيانات فقط لتحليل الأداء ولا نشاركها مع أطراف أخرى."]},
+        {icon:"link",title:"روابط التسويق بالعمولة",p:["تحتوي هذه الصفحة على روابط تسويق بالعمولة.","قد نحصل على عمولة صغيرة عند شرائك من خلال هذه الروابط.","هذا يساعدنا على الاستمرار في تقديم محتوى مجاني ومفيد."]},
+        {icon:"doc",title:"شروط الاستخدام",p:["باستخدام هذا الموقع فإنك توافق على ما يلي:","كل المعلومات هنا لأغراض تعليمية وتسويقية فقط.","لسنا مسؤولين عن أي منتجات تم شراؤها عبر روابط العمولة."]},
+        {icon:"alert",title:"إخلاء المسؤولية",p:["لسنا الكيان الرسمي لأي منتج يتم الترويج له.","كل الآراء تستند إلى خبرتنا الشخصية فقط.","يرجى التحقق من التفاصيل من المصدر الرسمي قبل الشراء."]},
+        {icon:"mail",title:"تواصل معنا",p:["للاستفسار تواصل معنا عبر البريد:","support@zen-oura.com"]}
+      ]}
+    };
+
+    function iconSVG(n){return `<div class='ico'>${n==="shield"?"🛡️":n==="link"?"🔗":n==="doc"?"📄":n==="alert"?"⚠️":"✉️"}</div>`;}
+
+    const cardsEl=document.getElementById("cards"),
+          langBtn=document.getElementById("langBtn"),
+          langMenu=document.getElementById("langMenu"),
+          langLabel=document.getElementById("langLabel"),
+          brandTitle=document.getElementById("brandTitle"),
+          footerText=document.getElementById("footerText");
+
+    function render(lang){
+      const d=translations[lang];document.documentElement.lang=lang;
+      document.documentElement.dir=(lang==="ar"?"rtl":"ltr");
+      langLabel.textContent=d.langLabel;brandTitle.textContent=d.brand;footerText.textContent=d.footer;
+      cardsEl.innerHTML="";
+      d.cards.forEach(c=>{
+        const el=document.createElement("div");el.className="card";
+        el.innerHTML=`<h3>${iconSVG(c.icon)}${c.title}</h3>`+c.p.map(t=>`<p>${t}</p>`).join("");
+        cardsEl.appendChild(el);
+      });
+    }
+
+    const saved=localStorage.getItem("lang")||"en";render(saved);
+
+    langBtn.onclick=()=>{langMenu.classList.toggle("open");};
+    langMenu.onclick=e=>{
+      const item=e.target.closest(".lang-item");if(!item)return;
+      const l=item.dataset.lang;localStorage.setItem("lang",l);render(l);
+      langMenu.classList.remove("open");
+    };
+    document.onclick=e=>{if(!langBtn.contains(e.target)&&!langMenu.contains(e.target))langMenu.classList.remove("open");};
+  </script>
 </body>
 </html>
